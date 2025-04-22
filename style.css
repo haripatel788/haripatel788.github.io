@@ -1,5 +1,78 @@
+/* Base body styles */
 body {
     font-family: 'Arial', sans-serif;
+    background-color: #E0F7FA; /* Light Blue background for a relaxed feel */
+    color: #757575; /* Warm Gray text for a soft and neutral tone */
+  }
+  
+  /* Navbar styling */
+  nav {
+    background-color: #4DB6AC; /* Muted Teal */
+    color: white;
+    padding: 16px 32px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+  }
+  
+  nav a {
+    color: white;
+    transition: color 0.3s ease;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    color: #FF8A80; /* Soft Coral on hover */
+    text-decoration: none;
+  }
+  
+  /* Main header */
+  header {
+    text-align: center;
+    padding: 48px 16px;
+    margin-top: 120px;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333333; /* Dark Gray for contrast */
+  }
+  
+  /* About Section */
+  #about {
+    padding: 48px 16px;
+    margin-top: 120px;
+    background-color: #ffffff;
+  }
+  
+  #about h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #333333;
+  }
+  
+  #about p {
+    font-size: 1.125rem;
+    color: #757575; /* Warm Gray text */
+  }
+  
+  /* Projects Section */
+  #projects {
+    padding: 48px 16px;
+    background-color: #ffffff;
+  }
+  
+  #projects h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #333333;
   }
   
   .card {
@@ -13,11 +86,88 @@ body {
     transform: scale(1.05);
   }
   
+  .card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333333;
+  }
+  
+  .card p {
+    color: #757575;
+  }
+  
+  .card a {
+    color: #4DB6AC; /* Muted Teal */
+    transition: color 0.3s ease;
+  }
+  
+  .card a:hover {
+    color: #FF8A80; /* Soft Coral */
+  }
+  
+  /* Resume Section */
+  #resume {
+    text-align: center;
+    padding: 48px 16px;
+  }
+  
+  #resume a {
+    font-size: 1.125rem;
+    color: #4DB6AC;
+    transition: color 0.3s ease;
+  }
+  
+  #resume a:hover {
+    color: #FF8A80; /* Soft Coral */
+  }
+  
+  /* Contact Section */
+  #contact {
+    text-align: center;
+    padding: 48px 16px;
+    background-color: #ffffff;
+  }
+  
+  #contact h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333333;
+  }
+  
+  #contact p {
+    font-size: 1.125rem;
+    color: #757575;
+  }
+  
+  #contact a {
+    color: #4DB6AC; /* Muted Teal */
+    transition: color 0.3s ease;
+  }
+  
+  #contact a:hover {
+    color: #FF8A80; /* Soft Coral */
+  }
+  
+  #contact div {
+    margin-top: 16px;
+  }
+  
+  #contact div a {
+    margin-left: 16px;
+    color: #4DB6AC;
+    transition: color 0.3s ease;
+  }
+  
+  #contact div a:hover {
+    color: #FF8A80; /* Soft Coral */
+  }
+  
+  /* Link styling globally */
   a {
     transition: color 0.3s ease;
   }
   
   a:hover {
-    color: #1d4ed8;
+    color: #FF8A80; /* Soft Coral on hover */
   }
   
