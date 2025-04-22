@@ -175,6 +175,7 @@ body {
 
   img {
     transition: transform 0.3s ease;
+    margin-right: -98px;
   }
   
   img:hover {
