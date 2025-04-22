@@ -1,0 +1,23 @@
+body {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .card {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  a {
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: #1d4ed8;
+  }
+  
