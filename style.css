@@ -3,6 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #E0F7FA; /* Light Blue background for a relaxed feel */
     color: #757575; /* Warm Gray text for a soft and neutral tone */
+    text-decoration: none;
   }
   
   /* Navbar styling */
@@ -171,3 +172,20 @@ body {
     color: #FF8A80; /* Soft Coral on hover */
   }
   
+
+  img {
+    transition: transform 0.3s ease;
+  }
+  
+  img:hover {
+    transform: scale(1.03);
+  }
+  
+
+  #about {
+    margin-top: -0px !important; 
+  }
+
+  /* #aboutme {
+    margin-bottom: -100px !important;
+  } */

@@ -12,14 +12,14 @@
 <body class="bg-white text-gray-900 font-sans leading-relaxed">
 
   <!-- Navbar -->
-  <nav class="bg-gray-900 text-white p-4 fixed w-full top-0 left-0 z-10 shadow-lg">
+  <nav class="bg-gray-900 text-white p-4 fixed w-full top-0 left-0 z-10 shadow-lg no-underline hover:no-underline">
     <div class="container mx-auto flex justify-between items-center">
       <a href="#" class="text-2xl font-bold">hari.</a>
       <ul class="flex space-x-8">
-        <li><a href="#about" class="hover:underline">about</a></li>
-        <li><a href="#projects" class="hover:underline">projects</a></li>
-        <li><a href="#resume" class="hover:underline">resume</a></li>
-        <li><a href="#contact" class="hover:underline">contact</a></li>
+        <li><a href="#about" class="hover:no-underline">about</a></li>
+        <li><a href="#projects" class="hover:no-underline">projects</a></li>
+        <li><a href="#resume" class="hover:no-underline">resume</a></li>
+        <li><a href="#contact" class="hover:no-underline">contact</a></li>
       </ul>
     </div>
   </nav>
@@ -30,40 +30,52 @@
   </header>
   
   <section id="about" class="container mx-auto px-4 py-12">
-    <h2 class="text-2xl font-semibold mb-6">About Me</h2>
-    <p class="text-lg">
-      I'm a high school student who is passionate about technology and business. I will be studying Computer Science and Business Administration at Drexel University starting in Fall 2025. I am currently enhancing my skills in Java through AP Computer Science A and have a strong foundation in Python, MySQL, HTML, JavaScript, CSS, Bootstrap, and TailwindCSS.
-    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      
+      <div class="flex flex-col justify-center h-full">
+        <h2 class="text-2xl font-semibold mb-4">about me.</h2>
+        <p class="text-lg">
+          i'm a high school student who is passionate about coding and website development. i will be studying computer science at drexel university's pennoni honors college starting in fall 2025. i am currently enhancing my skills in java through ap computer science a and have a strong foundation in python, mysql, html, javascript, css, bootstrap, and tailwindcss.
+        </p>
+      </div>
+  
+      <div class="flex justify-center">
+        <img src="pic3.png" alt="Cartoon illustration of Hari" class="w-full max-w-sm rounded-lg" />
+      </div>
+      
+    </div>
   </section>
+  
+  
 
   <section id="projects" class="container mx-auto px-4 mt-12 py-12">
-    <h2 class="text-2xl font-semibold mb-6">Projects</h2>
+    <h2 class="text-2xl font-semibold mb-6">projects.</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div class="card">
-        <h3 class="text-xl font-semibold">Project 1</h3>
-        <p>A short description of the project.</p>
-        <a href="#" class="text-blue-500 hover:underline">View Project</a>
+        <h3 class="text-xl font-semibold">project 1</h3>
+        <p>a short description of the project.</p>
+        <a href="#" class="text-blue-500 hover:underline">view project</a>
       </div>
       <div class="card">
-        <h3 class="text-xl font-semibold">Project 2</h3>
-        <p>A short description of the project.</p>
-        <a href="#" class="text-blue-500 hover:underline">View Project</a>
+        <h3 class="text-xl font-semibold">project 2</h3>
+        <p>a short description of the project.</p>
+        <a href="#" class="text-blue-500 hover:underline">view project</a>
       </div>
       <div class="card">
-        <h3 class="text-xl font-semibold">Project 3</h3>
-        <p>A short description of the project.</p>
-        <a href="#" class="text-blue-500 hover:underline">View Project</a>
+        <h3 class="text-xl font-semibold">project 3</h3>
+        <p>a short description of the project.</p>
+        <a href="#" class="text-blue-500 hover:underline">view project</a>
       </div>
     </div>
   </section>
 
   <section id="resume" class="text-center py-12">
-    <a href="resume.pdf" class="text-xl text-blue-500 hover:underline">Download Resume</a>
+    <a href="resume.pdf" class="text-xl text-blue-500 hover:underline">download resume</a>
   </section>
 
   <section id="contact" class="text-center py-12">
-    <h2 class="text-2xl font-semibold">Contact</h2>
-    <p class="text-lg">Feel free to reach out to me at:</p>
+    <h2 class="text-2xl font-semibold">contact</h2>
+    <p class="text-lg">feel free to reach out to me at:</p>
     <p class="text-lg">
       <a href="mailto:youremail@example.com" class="text-blue-500 hover:underline">haripatel788@gmail.com</a>
     </p>
