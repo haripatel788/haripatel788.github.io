@@ -1,4 +1,4 @@
-/* Base body styles */
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #E0F7FA; /* Light Blue background for a relaxed feel */
@@ -6,7 +6,6 @@ body {
     text-decoration: none;
   }
   
-  /* Navbar styling */
   nav {
     background-color: #4DB6AC; /* Muted Teal */
     color: white;
@@ -44,7 +43,6 @@ body {
     color: #333333; /* Dark Gray for contrast */
   }
   
-  /* About Section */
   #about {
     padding: 48px 16px;
     margin-top: 120px;
@@ -63,7 +61,6 @@ body {
     color: #757575; /* Warm Gray text */
   }
   
-  /* Projects Section */
   #projects {
     padding: 48px 16px;
     background-color: #ffffff;
@@ -122,7 +119,6 @@ body {
     color: #FF8A80; /* Soft Coral */
   }
   
-  /* Contact Section */
   #contact {
     text-align: center;
     padding: 48px 16px;
@@ -163,7 +159,6 @@ body {
     color: #FF8A80; /* Soft Coral */
   }
   
-  /* Link styling globally */
   a {
     transition: color 0.3s ease;
   }
