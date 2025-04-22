@@ -1,7 +1,7 @@
 /* Base body styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #E0F7FA; /* Light Blue background for a relaxed feel */
+    background-color: #E0F7FA !important;/* Light Blue background for a relaxed feel */
     color: #757575; /* Warm Gray text for a soft and neutral tone */
     text-decoration: none;
   }
@@ -48,7 +48,7 @@ body {
   #about {
     padding: 48px 16px;
     margin-top: 120px;
-    background-color: #ffffff;
+    background-color: #E0F7FA !important;
   }
   
   #about h2 {
@@ -66,7 +66,7 @@ body {
   /* Projects Section */
   #projects {
     padding: 48px 16px;
-    background-color: #ffffff;
+    background-color: #E0F7FA;
   }
   
   #projects h2 {
@@ -126,7 +126,8 @@ body {
   #contact {
     text-align: center;
     padding: 48px 16px;
-    background-color: #ffffff;
+    background-color: #E0F7FA;
+    ;
   }
   
   #contact h2 {
