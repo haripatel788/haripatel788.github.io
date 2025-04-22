@@ -3,24 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>hari patel</title>
+  <title>Hari Patel</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-white text-gray-900 font-sans leading-relaxed">
-  <header class="text-center py-12">
-    <h1 class="text-4xl font-bold">Your Name</h1>
-    <p class="text-xl mt-2">Web Developer | Problem Solver</p>
+
+  <!-- Navbar -->
+  <nav class="bg-gray-900 text-white p-4 fixed w-full top-0 left-0 z-10 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold">Hari Patel</a>
+      <ul class="flex space-x-8">
+        <li><a href="#about" class="hover:underline">About</a></li>
+        <li><a href="#projects" class="hover:underline">Projects</a></li>
+        <li><a href="#resume" class="hover:underline">Resume</a></li>
+        <li><a href="#contact" class="hover:underline">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="text-center py-12 mt-20">
+    <h1 class="text-4xl font-bold">Hari Patel</h1>
+    <p class="text-xl mt-2">Computer Science & Business Student at Drexel University</p>
   </header>
   
-  <section class="container mx-auto px-4">
+  <section id="about" class="container mx-auto px-4 py-12">
     <h2 class="text-2xl font-semibold mb-6">About Me</h2>
     <p class="text-lg">
-      I'm a passionate web developer who loves creating intuitive and user-friendly digital experiences. With expertise in HTML, CSS, JavaScript, and modern frameworks, I strive to build impactful solutions.
+      I'm a high school student who is passionate about technology and business. I will be studying Computer Science and Business Administration at Drexel University starting in Fall 2025. I am currently enhancing my skills in Java through AP Computer Science A and have a strong foundation in Python, MySQL, HTML, JavaScript, CSS, Bootstrap, and TailwindCSS.
     </p>
   </section>
 
-  <section class="container mx-auto px-4 mt-12">
+  <section id="projects" class="container mx-auto px-4 mt-12 py-12">
     <h2 class="text-2xl font-semibold mb-6">Projects</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div class="card">
@@ -41,11 +55,11 @@
     </div>
   </section>
 
-  <section class="text-center py-12">
+  <section id="resume" class="text-center py-12">
     <a href="resume.pdf" class="text-xl text-blue-500 hover:underline">Download Resume</a>
   </section>
 
-  <section class="text-center py-12">
+  <section id="contact" class="text-center py-12">
     <h2 class="text-2xl font-semibold">Contact</h2>
     <p class="text-lg">Feel free to reach out to me at:</p>
     <p class="text-lg">
