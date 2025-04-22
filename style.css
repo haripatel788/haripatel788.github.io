@@ -1,22 +1,29 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #E0F7FA !important;/* Light Blue background for a relaxed feel */
-    color: #757575; /* Warm Gray text for a soft and neutral tone */
+    background-color: #1a4f55 !important;/* Light Blue background for a relaxed feel */
+    color: #ffffff !important; /* Warm Gray text for a soft and neutral tone */
     text-decoration: none;
   }
   
-  nav {
-    background-color: #4DB6AC; /* Muted Teal */
+#hari_header{
+  color: #FF8A80 !important;
+}
+
+#hari_header:hover {
+  color: white !important;
+}
+
+  nav { 
     color: white;
     padding: 16px 32px;
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-decoration: none;
+    padding-top: 50px !important;
   }
   
   nav a {
@@ -40,37 +47,32 @@ body {
   header h1 {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #333333; /* Dark Gray for contrast */
   }
   
   #about {
     padding: 48px 16px;
     margin-top: 120px;
-    background-color: #E0F7FA !important;
+    color: white !important;
   }
   
   #about h2 {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 24px;
-    color: #333333;
   }
   
   #about p {
     font-size: 1.125rem;
-    color: #757575; /* Warm Gray text */
   }
   
   #projects {
     padding: 48px 16px;
-    background-color: #E0F7FA !important;
   }
   
   #projects h2 {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 24px;
-    color: #333333;
   }
   
   .card {
@@ -78,6 +80,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 8px;
     transition: transform 0.3s ease;
+    color: white !important;
   }
   
   .card:hover {
@@ -87,7 +90,6 @@ body {
   .card h3 {
     font-size: 1.25rem;
     font-weight: 600;
-    color: #333333;
   }
   
   .card p {
@@ -98,9 +100,14 @@ body {
     color: #4DB6AC; /* Muted Teal */
     transition: color 0.3s ease;
   }
+
+  .card p {
+    color: white;
+  }
   
   .card a:hover {
     color: #FF8A80; /* Soft Coral */
+    text-decoration: none !important;
   }
   
   /* Resume Section */
@@ -122,19 +129,16 @@ body {
   #contact {
     text-align: center;
     padding: 48px 16px;
-    background-color: #E0F7FA;
     ;
   }
   
   #contact h2 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #333333;
   }
   
   #contact p {
     font-size: 1.125rem;
-    color: #757575;
   }
   
   #contact a {
