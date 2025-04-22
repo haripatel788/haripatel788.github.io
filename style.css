@@ -63,7 +63,7 @@ body {
   
   #projects {
     padding: 48px 16px;
-    background-color: #E0F7FA;
+    background-color: #E0F7FA !important;
   }
   
   #projects h2 {
