@@ -1,10 +1,15 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #1a4f55 !important;/* Light Blue background for a relaxed feel */
-    color: #ffffff !important; /* Warm Gray text for a soft and neutral tone */
+    background-color: #1a4f55 !important;
+    color: #ffffff !important; 
     text-decoration: none;
   }
+
+  body {
+    font-family: 'Poppins', sans-serif !important
+  }
+  
   
 #hari_header{
   color: #FF8A80 !important;
@@ -33,11 +38,11 @@ body {
   }
   
   nav a:hover {
-    color: #FF8A80; /* Soft Coral on hover */
+    color: #FF8A80;
     text-decoration: none;
   }
   
-  /* Main header */
+
   header {
     text-align: center;
     padding: 48px 16px;
@@ -99,7 +104,7 @@ body {
   }
   
   .card a {
-    color: #4DB6AC; /* Muted Teal */
+    color: #4DB6AC;
     transition: color 0.3s ease;
   }
 
@@ -108,7 +113,7 @@ body {
   }
   
   .card a:hover {
-    color: #FF8A80; /* Soft Coral */
+    color: #FF8A80;
     text-decoration: none !important;
   }
   
@@ -129,12 +134,12 @@ body {
   }
   
   #contact a {
-    color: #4DB6AC; /* Muted Teal */
+    color: #4DB6AC;
     transition: color 0.3s ease;
   }
   
   #contact a:hover {
-    color: #FF8A80; /* Soft Coral */
+    color: #FF8A80;
   }
   
   #contact div {
@@ -148,7 +153,7 @@ body {
   }
   
   #contact div a:hover {
-    color: #FF8A80; /* Soft Coral */
+    color: #FF8A80; 
   }
   
   a {
@@ -156,7 +161,7 @@ body {
   }
   
   a:hover {
-    color: #FF8A80; /* Soft Coral on hover */
+    color: #FF8A80;
   }
   
 
@@ -174,9 +179,6 @@ body {
     margin-top: -0px !important; 
   }
 
-  /* #aboutme {
-    margin-bottom: -100px !important;
-  } */
 
 
   #experience {
@@ -206,23 +208,22 @@ body {
   }
 
 
-  /* Fade-in effect for page load */
+
 .fade-section {
   opacity: 0;
-  transform: translateY(20px); /* Start from below */
+  transform: translateY(20px);
   transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
-/* Make the fade effect visible when the section is in view */
+
 .fade-in-visible {
   opacity: 1;
-  transform: translateY(0); /* Glide to the normal position */
+  transform: translateY(0); 
 }
 
-/* Optional: Fade-out effect while scrolling up */
 .fade-out {
   opacity: 0;
-  transform: translateY(20px); /* Start from below */
+  transform: translateY(20px); 
   transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
