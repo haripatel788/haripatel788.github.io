@@ -9,12 +9,10 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="2.png" type="image/png">
 
-
 </head>
-<body class="text-gray-900 font-sans leading-relaxed">
+<body id="body">
 
   <nav class="text-white p-4 w-full top-0 left-0 z-10">
-    
     <div class="container mx-auto flex justify-between items-center">
       <a href="#" class="text-2xl font-bold" id="hari_header">hari.</a>
       <ul class="flex space-x-8">
@@ -26,28 +24,22 @@
     </div>
   </nav>
 
-  <!-- <header class="text-center py-12 mt-20">
-    <h1 class="text-4xl font-bold">[Enter Title Here]</h1>
-  </header> -->
-  
   <section id="about" class="container mx-auto px-4 py-12">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-      
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center fade-section">
       <div class="flex flex-col justify-center h-full">
         <h2 class="text-2xl font-semibold mb-4">about me.</h2>
         <p class="text-lg">
-          Hello, My name is Hari Patel! I'm a high school student who is passionate about coding and website development. I will be studying Computer Science at Drexel University's Pennoni Honors College starting in Fall 2025. I am currently learning multiple frameworks and languages to enchance my skillset.
+          Hello, My name is Hari Patel! I'm a high school student who is passionate about coding and website development. I will be studying Computer Science at Drexel University's Pennoni Honors College starting in Fall 2025. I am currently learning multiple frameworks and languages to enhance my skillset.
         </p>
       </div>
   
       <div class="flex justify-center">
         <img src="3.png" alt="Cartoon illustration of Hari" class="w-full max-w-sm rounded-lg" />
       </div>
-      
     </div>
   </section>
   
-  <section id="experience" class="container mx-auto px-4 py-12">
+  <section id="experience" class="container mx-auto px-4 py-12 fade-section " class="fade-on-scroll">
     <h2 class="text-2xl font-semibold mb-6">experience.</h2>
     <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 gap-14 items-center justify-center">
       <img src="assets/html.png" alt="HTML" class="h-16 mx-auto" />
@@ -61,8 +53,7 @@
     </div>
   </section>
   
-
-  <section id="projects" class="container mx-auto px-4 mt-12 py-12">
+  <section id="projects" class="container mx-auto px-4 mt-12 py-12 fade-section">
     <h2 class="text-2xl font-semibold mb-6">projects.</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div class="card">
@@ -72,12 +63,9 @@
       </div>
       <div class="card">
         <h3 class="text-xl font-semibold">Project 2</h3>
-        <p>
-          A personal project currently in development. Still a local file, but coming soon to the web! Stay tuned for updates and features.
-        </p>
+        <p>A personal project currently in development. Still a local file, but coming soon to the web! Stay tuned for updates and features.</p>
         <a href="#" class="text-blue-300 cursor-not-allowed pointer-events-none">Coming Soon</a>
       </div>
-      
       <div class="card">
         <h3 class="text-xl font-semibold">Project 3</h3>
         <p>A text-based RPG adventure where players explore, battle monsters, and make choices that shape their journey. Built with conditionals, loops, and user input logic in Java.</p>
@@ -86,35 +74,24 @@
     </div>
   </section>
 
-
-  <section id="contact" class="container mx-auto px-4 py-12 rounded-lg">
+  <section id="contact" class="container mx-auto px-4 py-12 rounded-lg fade-section">
     <h2 class="text-2xl font-semibold text-white">contact.</h2>
-    <p class="text-lg text-white mt-2">feel free to reach out to me at:</p>
+    <p class="text-lg text-white mt-2">Feel free to reach out to me at:</p>
 
     <div class="mt-6 flex justify-center space-x-6 relative">
-      <!-- Copy Email Button -->
       <button id="copyEmailBtn" class="hover:text-pink-400 transition-colors duration-300 text-teal-600 text-center text-2xl" data-tooltip-target="tooltip-website-url">
         <svg class="h-8 w-8 fill-current" viewBox="0 0 24 24">
           <path d="M1.5 4.5h21a.5.5 0 0 1 .5.5v14a.5.5 0 0 1-.5.5h-21a.5.5 0 0 1-.5-.5v-14a.5.5 0 0 1 .5-.5zm10.5 8.5 9-6h-18l9 6zm-9 5h18v-9l-9 6-9-6v9z"/>
         </svg>
       </button>
-      
-      
-
-
-      <!-- Tooltip for Copy Email Confirmation -->
-      <div id="tooltip" class="absolute bottom-full mb-2 px-1 py-1 text-sm text-white bg-black rounded opacity-0 transition-opacity duration-300">
+      <div id="tooltip" class="absolute bottom-full mb-2 px-1 py-1 text-sm text-white bg-black rounded opacity-0">
         Copied!
       </div>
-      
-      <!-- LinkedIn Icon -->
       <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="hover:text-pink-400 transition-colors duration-300 text-2xl">
         <svg class="h-8 w-8 fill-current" viewBox="0 0 24 24">
           <path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.3c-1 0-1.7-.8-1.7-1.7s.8-1.7 1.7-1.7 1.7.8 1.7 1.7-.8 1.7-1.7 1.7zm13.5 11.3h-3v-5.4c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.5h-3v-10h2.9v1.4h.1c.4-.8 1.4-1.7 2.9-1.7 3.1 0 3.6 2 3.6 4.6v5.7z"/>
         </svg>
       </a>
-      
-      <!-- GitHub Icon -->
       <a href="https://github.com/haripatel788" target="_blank" class="hover:text-pink-400 transition-colors duration-300 text-2xl">
         <svg class="h-8 w-8 fill-current" viewBox="0 0 24 24">
           <path d="M12 0c-6.6 0-12 5.4-12 12 0 5.3 3.4 9.8 8 11.4.6.1.8-.3.8-.6v-2.1c-3.2.7-3.8-1.5-3.8-1.5-.5-1.1-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1 2.9.8.1-.6.3-1 .6-1.2-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.8-.4 2.8-.4s1.9.1 2.8.4c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.6-2.7 5.6-5.3 5.9.3.3.6.8.6 1.6v2.3c0 .3.2.7.8.6 4.6-1.5 8-6 8-11.4 0-6.6-5.4-12-12-12z"/>

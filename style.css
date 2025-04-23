@@ -204,3 +204,25 @@ body {
     left: 100px !important;
     
   }
+
+
+  /* Fade-in effect for page load */
+.fade-section {
+  opacity: 0;
+  transform: translateY(20px); /* Start from below */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Make the fade effect visible when the section is in view */
+.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0); /* Glide to the normal position */
+}
+
+/* Optional: Fade-out effect while scrolling up */
+.fade-out {
+  opacity: 0;
+  transform: translateY(20px); /* Start from below */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
