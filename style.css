@@ -51,7 +51,7 @@ body {
   
   #about {
     padding: 48px 16px;
-    margin-top: 120px;
+    padding-top: 200px !important;
     color: white !important;
   }
   
@@ -67,12 +67,14 @@ body {
   
   #projects {
     padding: 48px 16px;
+    padding-top: 200px !important;
   }
   
   #projects h2 {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 24px;
+
   }
   
   .card {
@@ -110,24 +112,8 @@ body {
     text-decoration: none !important;
   }
   
-  /* Resume Section */
-  #resume {
-    text-align: center;
-    padding: 48px 16px;
-  }
-  
-  #resume a {
-    font-size: 1.125rem;
-    color: #4DB6AC;
-    transition: color 0.3s ease;
-  }
-  
-  #resume a:hover {
-    color: #FF8A80; /* Soft Coral */
-  }
   
   #contact {
-    text-align: center;
     padding: 48px 16px;
     ;
   }
@@ -190,3 +176,19 @@ body {
   /* #aboutme {
     margin-bottom: -100px !important;
   } */
+
+
+  #experience {
+    padding-top: 200px !important;
+  }
+
+
+  #contact {
+    background-color: none !important;
+    color: white !important;
+    padding-top: 200px !important;
+  }
+
+  #copyEmailBtn {
+    color: teal !important;
+  }

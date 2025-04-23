@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>hari patel</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/81129d5197.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="2.png" type="image/png">
+
 
 </head>
 <body class="text-gray-900 font-sans leading-relaxed">
@@ -19,15 +21,14 @@
         <li><a href="#about" class="hover:no-underline">about</a></li>
         <li><a href="#experience" class="hover:no-underline">experience</a></li>
         <li><a href="#projects" class="hover:no-underline">projects</a></li>
-        <li><a href="#resume" class="hover:no-underline">resume</a></li>
         <li><a href="#contact" class="hover:no-underline">contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <header class="text-center py-12 mt-20">
-    <h1 class="text-4xl font-bold">computer science student</h1>
-  </header>
+  <!-- <header class="text-center py-12 mt-20">
+    <h1 class="text-4xl font-bold">[Enter Title Here]</h1>
+  </header> -->
   
   <section id="about" class="container mx-auto px-4 py-12">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -82,22 +83,84 @@
     </div>
   </section>
 
-  <section id="resume" class="text-center py-12">
-    <a href="resume.pdf" class="text-xl text-blue-500 hover:underline">download resume</a>
-  </section>
 
-  <section id="contact" class="text-center py-12">
-    <h2 class="text-2xl font-semibold">contact</h2>
-    <p class="text-lg">feel free to reach out to me at:</p>
-    <p class="text-lg">
-      <a href="mailto:youremail@example.com" class="text-blue-500 hover:underline">haripatel788@gmail.com</a>
-    </p>
-    <div class="mt-4">
-      <a href="https://www.linkedin.com/in/yourprofile" class="text-blue-500 hover:underline">LinkedIn</a> //edit this into a icon
-      <a href="https://github.com/yourprofile" class="ml-4 text-blue-500 hover:underline">GitHub</a> //edit this into a icon
+  <section id="contact" class="container mx-auto px-4 py-12 rounded-lg">
+    <h2 class="text-2xl font-semibold text-white">contact.</h2>
+    <p class="text-lg text-white mt-2">feel free to reach out to me at:</p>
+  
+    <div class="mt-6 flex space-x-6 relative">
+<!-- Email Icon (Copy to clipboard) -->
+<!-- Email Icon (Copy to clipboard) -->
+<button id="copyEmailBtn" class="hover:text-pink-400 transition-colors duration-300 text-teal-600">
+  <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+    <path d="M1.5 4.5h21a.5.5 0 0 1 .5.5v14a.5.5 0 0 1-.5.5h-21a.5.5 0 0 1-.5-.5v-14a.5.5 0 0 1 .5-.5zm10.5 8.5 9-6h-18l9 6zm-9 5h18v-9l-9 6-9-6v9z"/>
+  </svg>
+</button>
+
+
+
+
+  
+      <!-- Tooltip -->
+      <span id="tooltip" class="absolute bottom-full mb-2 text-sm text-white bg-teal-700 px-2 py-1 rounded opacity-0 transition-opacity duration-300">Copied!</span>
+  
+      <!-- LinkedIn Icon -->
+      <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="hover:text-pink-400 transition-colors duration-300">
+        <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+          <path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 
+          5 5 5h14c2.8 0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11 
+          19h-3v-10h3v10zm-1.5-11.3c-1 0-1.7-.8-1.7-1.7s.8-1.7 
+          1.7-1.7 1.7.8 1.7 1.7-.8 1.7-1.7 1.7zm13.5 
+          11.3h-3v-5.4c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 
+          2.9v5.5h-3v-10h2.9v1.4h.1c.4-.8 1.4-1.7 
+          2.9-1.7 3.1 0 3.6 2 3.6 4.6v5.7z"/>
+        </svg>
+      </a>
+  
+      <!-- GitHub Icon -->
+      <a href="https://github.com/haripatel788" target="_blank" class=" hover:text-pink-400 transition-colors duration-300">
+        <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+          <path d="M12 0c-6.6 0-12 5.4-12 12 0 
+          5.3 3.4 9.8 8 11.4.6.1.8-.3.8-.6v-2.1c-3.2.7-3.8-1.5-3.8-1.5-.5-1.1-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 
+          1 .1 1.5 1 1.5 1 .9 1.5 2.3 1 2.9.8.1-.6.3-1 
+          .6-1.2-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.3 
+          1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 
+          1.2.9-.3 1.8-.4 2.8-.4s1.9.1 
+          2.8.4c2.2-1.5 3.2-1.2 
+          3.2-1.2.6 1.6.2 2.8.1 
+          3.1.8.8 1.2 1.9 1.2 
+          3.1 0 4.6-2.7 5.6-5.3 
+          5.9.3.3.6.8.6 1.6v2.3c0 
+          .3.2.7.8.6 4.6-1.5 
+          8-6 8-11.4 0-6.6-5.4-12-12-12z"/>
+        </svg>
+      </a>
     </div>
   </section>
+  
+  
+
+
+  <footer class="text-center py-6 text-gray-700 bg-blue-100 mt-12">
+    <p class="text-sm">Designed by Hari Patel</p>
+    <p class="text-sm">
+      <a href="mailto:haripatel788@gmail.com" class="text-teal-600 hover:underline">haripatel788@gmail.com</a>
+    </p>
+  </footer>
+  
 
   <script src="script.js"></script>
+  <script>
+    const copyBtn = document.getElementById("copyEmailBtn");
+    const tooltip = document.getElementById("tooltip");
+  
+    copyBtn.addEventListener("click", () => {
+      navigator.clipboard.writeText("haripatel788@gmail.com").then(() => {
+        tooltip.classList.add("opacity-100");
+        setTimeout(() => tooltip.classList.remove("opacity-100"), 1500);
+      });
+    });
+  </script>
+  
 </body>
 </html>
