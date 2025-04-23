@@ -115,7 +115,7 @@ body {
   
   #contact {
     padding: 48px 16px;
-    ;
+    text-align: center;
   }
   
   #contact h2 {
@@ -125,6 +125,7 @@ body {
   
   #contact p {
     font-size: 1.125rem;
+    text-align: center;
   }
   
   #contact a {
@@ -190,5 +191,16 @@ body {
   }
 
   #copyEmailBtn {
-    color: teal !important;
+    color: #4db6ac !important;
+  }
+
+  #copyEmailBtn:hover {
+    color: #FF8A80 !important;
+  }
+
+  #toolTip {
+    background-color: #1a4f55 !important;
+    color: white !important;
+    left: 100px !important;
+    
   }
