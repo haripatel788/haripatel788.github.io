@@ -210,7 +210,7 @@ body {
 .fade-section {
   opacity: 0;
   transform: translateY(20px); /* Start from below */
-  transition: opacity 1s ease-out, transform 1s ease-out;
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
 /* Make the fade effect visible when the section is in view */
@@ -223,6 +223,6 @@ body {
 .fade-out {
   opacity: 0;
   transform: translateY(20px); /* Start from below */
-  transition: opacity 1s ease-out, transform 1s ease-out;
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
