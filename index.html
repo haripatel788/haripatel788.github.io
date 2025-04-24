@@ -7,23 +7,39 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/81129d5197.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="2.png" type="image/png">
-
 </head>
 <body id="body">
 
   <nav class="text-white p-4 w-full top-0 left-0 z-10">
     <div class="container mx-auto flex justify-between items-center">
-      
       <a href="#" class="text-2xl font-bold" id="hari_header">hari.</a>
-      <ul class="flex space-x-8">
+      
+
+      <ul class="hidden md:flex space-x-8">
         <li><a href="#about" class="hover:no-underline">about</a></li>
         <li><a href="#experience" class="hover:no-underline">experience</a></li>
         <li><a href="#projects" class="hover:no-underline">projects</a></li>
         <li><a href="#contact" class="hover:no-underline">contact</a></li>
       </ul>
+      
+
+      <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-black bg-opacity-90 z-20 pt-20">
+      <div class="container mx-auto px-4 py-8">
+        <ul class="flex flex-col space-y-6">
+          <li><a href="#about" class="block text-2xl hover:text-pink-400">about</a></li>
+          <li><a href="#experience" class="block text-2xl hover:text-pink-400">experience</a></li>
+          <li><a href="#projects" class="block text-2xl hover:text-pink-400">projects</a></li>
+          <li><a href="#contact" class="block text-2xl hover:text-pink-400">contact</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
@@ -42,9 +58,9 @@
     </div>
   </section>
   
-  <section id="experience" class="container mx-auto px-4 py-12 fade-section" class="fade-on-scroll">
+  <section id="experience" class="container mx-auto px-4 py-12 fade-section">
     <h2 class="text-2xl font-semibold mb-6">experience.</h2>
-    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 gap-14 items-center justify-center">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-14 items-center justify-center">
       <img src="assets/html.png" alt="HTML" class="h-16 mx-auto" />
       <img src="assets/css.png" alt="CSS" class="h-16 mx-auto" />
       <img src="assets/javascript.png" alt="JavaScript" class="h-16 mx-auto" />
@@ -103,7 +119,7 @@
     </div>
   </section>
 
-  <footer class="text-center py-6 text-gray-700 bg-blue-100 mt-12 fade-section">
+  <footer class="text-center py-6 mt-12 fade-section">
     <p class="text-sm">Designed by Hari Patel</p>
     <p class="text-sm">
       <a href="mailto:haripatel788@gmail.com" class="text-teal-600">haripatel788@gmail.com</a>
@@ -122,6 +138,5 @@
       });
     });
   </script>
-  
 </body>
 </html>

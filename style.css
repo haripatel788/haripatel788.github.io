@@ -1,229 +1,203 @@
-
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #1a4f55 !important;
-    color: #ffffff !important; 
-    text-decoration: none;
-  }
+  font-family: 'Poppins', sans-serif !important;
+  background-color: #1a4f55 !important;
+  color: #ffffff !important;
+  text-decoration: none;
+}
 
-  body {
-    font-family: 'Poppins', sans-serif !important
-  }
-  
-  
 #hari_header{
-  color: #FF8A80 !important;
+color: #FF8A80 !important;
 }
 
 #hari_header:hover {
-  color: white !important;
+color: white !important;
 }
 
-  nav { 
-    color: white;
-    padding: 16px 32px;
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-    text-decoration: none;
-    padding-top: 50px !important;
-  }
-  
-  nav a {
-    color: white;
-    transition: color 0.3s ease;
-    text-decoration: none;
-  }
-  
-  nav a:hover {
-    color: #FF8A80;
-    text-decoration: none;
-  }
-  
+nav { 
+color: white;
+padding: 16px 32px;
+position: relative;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 10;
+text-decoration: none;
+padding-top: 50px !important;
+}
 
-  header {
-    text-align: center;
-    padding: 48px 16px;
-    margin-top: 120px;
-  }
-  
-  header h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-  }
-  
-  #about {
-    padding: 48px 16px;
-    padding-top: 200px !important;
-    color: white !important;
-  }
-  
-  #about h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 24px;
-  }
-  
-  #about p {
-    font-size: 1.125rem;
-  }
-  
-  #projects {
-    padding: 48px 16px;
-    padding-top: 200px !important;
-  }
-  
-  #projects h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 24px;
+nav a {
+color: white;
+transition: color 0.3s ease;
+text-decoration: none;
+}
 
-  }
-  
-  .card {
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-    color: white !important;
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-  }
-  
-  .card h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-  }
-  
-  .card p {
-    color: #757575;
-  }
-  
-  .card a {
-    color: #4DB6AC;
-    transition: color 0.3s ease;
-  }
+nav a:hover {
+color: #FF8A80;
+text-decoration: none;
+}
 
-  .card p {
-    color: white;
-  }
-  
-  .card a:hover {
-    color: #FF8A80;
-    text-decoration: none !important;
-  }
-  
-  
-  #contact {
-    padding: 48px 16px;
-    text-align: center;
-  }
-  
-  #contact h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
-  
-  #contact p {
-    font-size: 1.125rem;
-    text-align: center;
-  }
-  
-  #contact a {
-    color: #4DB6AC;
-    transition: color 0.3s ease;
-  }
-  
-  #contact a:hover {
-    color: #FF8A80;
-  }
-  
-  #contact div {
-    margin-top: 16px;
-  }
-  
-  #contact div a {
-    margin-left: 16px;
-    color: #4DB6AC;
-    transition: color 0.3s ease;
-  }
-  
-  #contact div a:hover {
-    color: #FF8A80; 
-  }
-  
-  a {
-    transition: color 0.3s ease;
-  }
-  
-  a:hover {
-    color: #FF8A80;
-  }
-  
+header {
+text-align: center;
+padding: 48px 16px;
+margin-top: 120px;
+}
 
-  img {
-    transition: transform 0.3s ease;
-    margin-right: -98px;
-  }
-  
-  img:hover {
-    transform: scale(1.03);
-  }
-  
+header h1 {
+font-size: 2.5rem;
+font-weight: bold;
+}
 
-  #about {
-    margin-top: -0px !important; 
-  }
+#about {
+padding: 48px 16px;
+padding-top: 200px !important;
+color: white !important;
+}
 
+#about h2 {
+font-size: 1.5rem;
+font-weight: 600;
+margin-bottom: 24px;
+}
 
+#about p {
+font-size: 1.125rem;
+}
 
-  #experience {
-    padding-top: 200px !important;
-  }
+#projects {
+padding: 48px 16px;
+padding-top: 200px !important;
+}
 
+#projects h2 {
+font-size: 1.5rem;
+font-weight: 600;
+margin-bottom: 24px;
+}
 
-  #contact {
-    background-color: none !important;
-    color: white !important;
-    padding-top: 200px !important;
-  }
+.card {
+padding: 20px;
+border: 1px solid #ddd;
+border-radius: 8px;
+transition: transform 0.3s ease;
+color: white !important;
+}
 
-  #copyEmailBtn {
-    color: #4db6ac !important;
-  }
+.card:hover {
+transform: scale(1.05);
+}
 
-  #copyEmailBtn:hover {
-    color: #FF8A80 !important;
-  }
+.card h3 {
+font-size: 1.25rem;
+font-weight: 600;
+}
 
-  #toolTip {
-    background-color: #1a4f55 !important;
-    color: white !important;
-    left: 100px !important;
-    
-  }
+.card p {
+color: white;
+}
 
+.card a {
+color: #4DB6AC;
+transition: color 0.3s ease;
+}
 
+.card a:hover {
+color: #FF8A80;
+text-decoration: none !important;
+}
+
+#contact {
+padding: 48px 16px;
+text-align: center;
+background-color: none !important;
+color: white !important;
+padding-top: 200px !important;
+}
+
+#contact h2 {
+font-size: 1.5rem;
+font-weight: 600;
+}
+
+#contact p {
+font-size: 1.125rem;
+text-align: center;
+}
+
+#copyEmailBtn {
+color: #4db6ac !important;
+}
+
+#copyEmailBtn:hover {
+color: #FF8A80 !important;
+}
+
+#tooltip {
+background-color: rgba(0, 0, 0, 0.75);
+padding: 4px 8px;
+border-radius: 4px;
+font-size: 0.875rem;
+}
+
+img {
+transition: transform 0.3s ease;
+margin-right: -98px;
+}
+
+img:hover {
+transform: scale(1.03);
+}
+
+#about {
+margin-top: -0px !important; 
+}
+
+#experience {
+padding-top: 200px !important;
+}
 
 .fade-section {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+opacity: 0;
+transform: translateY(20px);
+transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
-
 .fade-in-visible {
-  opacity: 1;
-  transform: translateY(0); 
+opacity: 1;
+transform: translateY(0); 
 }
 
 .fade-out {
-  opacity: 0;
-  transform: translateY(20px); 
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+opacity: 0;
+transform: translateY(20px); 
+transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
+html {
+scroll-behavior: smooth;
+}
+
+@media (max-width: 767px) {
+#experience .grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+#about, #experience, #projects, #contact {
+  padding-top: 100px !important;
+}
+
+#about .grid {
+  grid-template-columns: 1fr;
+  text-align: center;
+}
+
+#about img {
+  margin: 0 auto;
+  order: -1;
+  margin-bottom: 30px;
+}
+
+nav {
+  padding-top: 20px !important;
+}
+}
