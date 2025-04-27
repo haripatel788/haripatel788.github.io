@@ -201,3 +201,8 @@ nav {
   padding-top: 20px !important;
 }
 }
+
+#footer_email:hover {
+  color: #FF8A80 !important;
+  transition: 0.3s ease;
+}
