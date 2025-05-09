@@ -95,6 +95,11 @@ font-weight: 600;
 color: white;
 }
 
+#skills {
+padding: 48px 16px;
+padding-top: 200px !important;
+}
+
 .card a {
 color: #4DB6AC;
 transition: color 0.3s ease;
@@ -182,7 +187,7 @@ scroll-behavior: smooth;
   gap: 20px;
 }
 
-#about, #experience, #projects, #contact {
+#about, #experience, #projects, #contact, #skills {
   padding-top: 100px !important;
 }
 
@@ -203,6 +208,12 @@ nav {
 }
 
 #footer_email:hover {
+  color: #FF8A80 !important;
+  transition: 0.3s ease;
+}
+
+
+#githubicon:hover {
   color: #FF8A80 !important;
   transition: 0.3s ease;
 }
