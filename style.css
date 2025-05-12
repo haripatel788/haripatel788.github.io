@@ -1,12 +1,12 @@
 body {
   font-family: 'Poppins', sans-serif !important;
-  background-color: #1a4f55 !important;
+  background-color: #4a4453 !important;
   color: #ffffff !important;
   text-decoration: none;
 }
 
 #hari_header{
-color: #FF8A80 !important;
+color: #af9ecd !important;
 }
 
 #hari_header:hover {
@@ -32,7 +32,7 @@ text-decoration: none;
 }
 
 nav a:hover {
-color: #FF8A80;
+color: #af9ecd;
 text-decoration: none;
 }
 
@@ -106,7 +106,7 @@ transition: color 0.3s ease;
 }
 
 .card a:hover {
-color: #FF8A80;
+color: #af9ecd !important;
 text-decoration: none !important;
 }
 
@@ -133,7 +133,7 @@ color: #4db6ac !important;
 }
 
 #copyEmailBtn:hover {
-color: #FF8A80 !important;
+color: #af9ecd !important;
 }
 
 #tooltip {
@@ -208,12 +208,12 @@ nav {
 }
 
 #footer_email:hover {
-  color: #FF8A80 !important;
+  color: #af9ecd !important;
   transition: 0.3s ease;
 }
 
 
 #githubicon:hover {
-  color: #FF8A80 !important;
+  color: #af9ecd !important;
   transition: 0.3s ease;
 }
