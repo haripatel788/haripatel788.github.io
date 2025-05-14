@@ -101,12 +101,12 @@ padding-top: 200px !important;
 }
 
 .card a {
-color: #4DB6AC;
+color: #af9ecd;
 transition: color 0.3s ease;
 }
 
 .card a:hover {
-color: #af9ecd !important;
+color: white !important;
 text-decoration: none !important;
 }
 
@@ -216,4 +216,13 @@ nav {
 #githubicon:hover {
   color: #af9ecd !important;
   transition: 0.3s ease;
+}
+
+h2 {
+  color: #af9ecd !important;
+}
+
+.firebaselogo {
+  width: 100px !important;
+  height: 100px !important;
 }
