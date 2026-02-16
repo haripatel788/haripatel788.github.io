@@ -1,0 +1,15 @@
+- audtion
+- after effects
+- photoshop
+- primer Pro 
+
+
+- Neon Database
+- Github
+- Vercel
+- Render
+- FastAPI
+- Scikit Learn
+- Pandas
+- Supabase
+- Clerk

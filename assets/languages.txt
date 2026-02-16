@@ -1,0 +1,16 @@
+- boostrap
+- css
+- firebase
+- git
+- google script
+- java
+- javascript
+- python
+- mySQL
+- TailWindcss
+- HTML
+
+- typescript
+- react
+- next.js
+- PostgresSQL
