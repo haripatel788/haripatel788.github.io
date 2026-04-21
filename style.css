@@ -622,6 +622,25 @@ footer {
 }
 .entry.output ul { margin-left: 1.05rem; margin-top: 0.25rem; }
 .entry.output a { color: #93c5fd; }
+.goodbye-screen {
+  text-align: center;
+  padding: 2.2rem 1rem 1.8rem;
+}
+.goodbye-screen h1 {
+  font-family: var(--font-display);
+  letter-spacing: 0.08em;
+  font-size: clamp(2.4rem, 8vw, 5.4rem);
+  line-height: 0.95;
+  margin-bottom: 0.95rem;
+  color: #9dd3ff;
+  text-shadow: 0 8px 22px rgba(0, 0, 0, 0.42);
+}
+.goodbye-screen p {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #d8fce7;
+}
 .terminal-suggestions {
   border-top: 1px solid rgba(125, 211, 252, 0.15);
   padding: 0.9rem 1.2rem;
@@ -749,4 +768,51 @@ footer {
     transition: none !important;
     animation: none !important;
   }
+}
+
+/* Secret admin terminal mode */
+.terminal-mode.admin-mode {
+  background: #020704;
+  color: #9bffb5;
+}
+.terminal-mode.admin-mode .terminal-shell {
+  border-color: rgba(32, 255, 126, 0.45);
+  background: linear-gradient(180deg, #03100a 0%, #020904 100%);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.72), inset 0 0 28px rgba(32, 255, 126, 0.1);
+}
+.terminal-mode.admin-mode .terminal-topbar {
+  border-bottom-color: rgba(32, 255, 126, 0.24);
+  background: rgba(1, 10, 6, 0.86);
+}
+.terminal-mode.admin-mode .terminal-title,
+.terminal-mode.admin-mode .entry.command,
+.terminal-mode.admin-mode .prompt-label {
+  color: #57ff90;
+}
+.terminal-mode.admin-mode .terminal-hint,
+.terminal-mode.admin-mode .entry.output p,
+.terminal-mode.admin-mode .entry.output li {
+  color: #bcffd0;
+}
+.terminal-mode.admin-mode .entry.output h3,
+.terminal-mode.admin-mode .entry.output a {
+  color: #84ffc1;
+}
+.terminal-mode.admin-mode .entry {
+  border-color: rgba(32, 255, 126, 0.2);
+  background: rgba(1, 14, 8, 0.88);
+}
+.terminal-mode.admin-mode .entry::before {
+  background: linear-gradient(180deg, rgba(32, 255, 126, 0.75), rgba(127, 255, 170, 0.35));
+}
+.terminal-mode.admin-mode .terminal-input,
+.terminal-mode.admin-mode .terminal-run,
+.terminal-mode.admin-mode .suggestion-btn,
+.terminal-mode.admin-mode .quick-chip {
+  border-color: rgba(32, 255, 126, 0.38);
+  color: #c8ffd8;
+  background: rgba(8, 42, 23, 0.4);
+}
+.terminal-mode.admin-mode .site-logo-fallback {
+  color: #84ffc1;
 }

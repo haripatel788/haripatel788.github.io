@@ -50,7 +50,7 @@ const data = {
   email: getText('#emailBtnText') || 'haripatel788@gmail.com',
 };
 
-const commandList = ['help', 'menu', 'about', 'stack', 'projects', 'resume', 'contact', 'clear', 'history', 'home'];
+const commandList = ['help', 'menu', 'about', 'stack', 'projects', 'resume', 'contact', 'clear', 'history', 'home', 'admin', 'exit'];
 
 const createEntry = (type, html) => {
   const el = document.createElement('article');
@@ -143,6 +143,33 @@ const renderHistory = () => {
   renderSuggestions(['help']);
 };
 
+const enterAdminMode = () => {
+  document.body.classList.add('admin-mode');
+  createEntry(
+    'output',
+    '<h3>Admin Access Granted</h3><p>Welcome to stealth terminal mode. Signal elevated. Type <strong>exit</strong> to return.</p>'
+  );
+  renderSuggestions(['projects', 'history', 'exit']);
+};
+
+const exitAdminMode = () => {
+  document.body.classList.remove('admin-mode');
+  createEntry('output', '<h3>Admin Session Closed</h3><p>Returned to standard portfolio terminal.</p>');
+  renderSuggestions(['help', 'about', 'projects']);
+};
+
+const renderGoodbyeScreen = () => {
+  terminalOutput.innerHTML = '';
+  createEntry(
+    'output',
+    `<div class="goodbye-screen">
+      <h1>THANK YOU</h1>
+      <p>Appreciate you exploring my terminal portfolio. If something sparked your interest, let’s connect and build something meaningful together.</p>
+    </div>`
+  );
+  renderSuggestions(['home', 'contact', 'projects']);
+};
+
 const commandHandlers = {
   help: renderHelp,
   menu: renderHelp,
@@ -152,6 +179,14 @@ const commandHandlers = {
   resume: renderResume,
   contact: renderContact,
   history: renderHistory,
+  admin: enterAdminMode,
+  exit: () => {
+    if (document.body.classList.contains('admin-mode')) {
+      exitAdminMode();
+      return;
+    }
+    renderGoodbyeScreen();
+  },
   home: () => {
     terminalOutput.innerHTML = '';
     createEntry('output', '<h3>Welcome</h3><p>Terminal ready. Type <strong>help</strong> to explore.</p>');
