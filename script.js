@@ -13,6 +13,12 @@ let history = [];
 let historyIndex = -1;
 let bootDone = false;
 let commandQueue = Promise.resolve();
+let lastExecutedBase = 'home';
+const commandFrequency = {};
+const commandTransitions = {};
+let secretModeActive = false;
+let secretSessionCounter = 0;
+let activeSecretSessionId = null;
 
 const getText = (selector) => {
   const el = source ? source.querySelector(selector) : null;
@@ -50,11 +56,22 @@ const data = {
   email: getText('#emailBtnText') || 'haripatel788@gmail.com',
 };
 
-const commandList = ['help', 'menu', 'about', 'stack', 'projects', 'resume', 'contact', 'clear', 'history', 'home', 'admin', 'exit'];
+const stackCategories = source
+  ? [...source.querySelectorAll('#experience .tech-category')].map((section) => ({
+      label: section.querySelector('.tech-category-label')?.textContent.trim() || 'Category',
+      items: [...section.querySelectorAll('.tech-pill')].map((item) => item.textContent.trim()),
+    }))
+  : [];
+
+const visibleCommandList = ['help', 'about', 'stack', 'projects', 'resume', 'resume live', 'contact', 'clear', 'history', 'home', 'exit'];
+const secretCommand = 'harisupersecretcommand';
 
 const createEntry = (type, html) => {
   const el = document.createElement('article');
   el.className = `entry ${type}`;
+  if (secretModeActive && activeSecretSessionId !== null) {
+    el.dataset.secretSession = String(activeSecretSessionId);
+  }
   el.innerHTML = html;
   terminalOutput.appendChild(el);
   terminalOutput.scrollTop = terminalOutput.scrollHeight;
@@ -83,9 +100,56 @@ const typeText = (el, text, speed = 18) => {
   });
 };
 
+const staticSuggestionFallback = ['help', 'about', 'projects', 'resume', 'contact', 'stack', 'history'];
+
+const recommendCommands = (contextCommands = []) => {
+  const scores = {};
+  const candidates = new Set([...visibleCommandList, ...contextCommands]);
+
+  candidates.forEach((cmd) => {
+    scores[cmd] = 0;
+  });
+
+  // Context is still primary.
+  contextCommands.forEach((cmd, idx) => {
+    scores[cmd] = (scores[cmd] || 0) + (18 - idx * 2);
+  });
+
+  // Favor frequently used commands.
+  Object.entries(commandFrequency).forEach(([cmd, count]) => {
+    if (cmd in scores) scores[cmd] += Math.min(12, count * 1.6);
+  });
+
+  // Learn command-to-command transitions.
+  const fromLast = commandTransitions[lastExecutedBase] || {};
+  Object.entries(fromLast).forEach(([cmd, count]) => {
+    if (cmd in scores) scores[cmd] += Math.min(14, count * 2.2);
+  });
+
+  // Recency boost for recent commands (excluding exact last command).
+  const recent = [...new Set(history.slice(-6).map((h) => h.split(' ')[0]).reverse())];
+  recent.forEach((cmd, idx) => {
+    if (cmd in scores && cmd !== lastExecutedBase) {
+      scores[cmd] += Math.max(0, 8 - idx * 1.4);
+    }
+  });
+
+  // Keep utility commands available but not dominant.
+  ['help', 'home', 'clear'].forEach((cmd) => {
+    if (cmd in scores) scores[cmd] += 1;
+  });
+
+  return Object.entries(scores)
+    .filter(([cmd]) => cmd !== secretCommand)
+    .sort((a, b) => b[1] - a[1])
+    .map(([cmd]) => cmd)
+    .slice(0, 5);
+};
+
 const renderSuggestions = (commands = []) => {
+  const personalized = recommendCommands(commands.length ? commands : staticSuggestionFallback);
   terminalSuggestions.innerHTML = '';
-  commands.forEach((cmd) => {
+  personalized.forEach((cmd) => {
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'suggestion-btn';
@@ -101,7 +165,7 @@ const renderHelp = () => {
     `<div class="output-shell">
       <h3>Command Directory</h3>
       <p class="output-sub">Use these commands to navigate the portfolio terminal.</p>
-      <div class="command-grid">${commandList.map((c) => `<span class="chip">${c}</span>`).join('')}</div>
+      <div class="command-grid">${visibleCommandList.map((c) => `<button type="button" class="chip inline-command" data-command="${c}">${c}</button>`).join('')}</div>
     </div>`
   );
   renderSuggestions(['about', 'projects', 'resume', 'contact']);
@@ -120,12 +184,20 @@ const renderAbout = () => {
 };
 
 const renderStack = () => {
+  const categoriesHtml = stackCategories
+    .map(
+      (group) => `<div class="stack-group">
+        <h4>${group.label}</h4>
+        <div class="command-grid">${group.items.map((item) => `<span class="chip">${item}</span>`).join('')}</div>
+      </div>`
+    )
+    .join('');
   createEntry(
     'output',
     `<div class="output-shell">
       <h3>Stack</h3>
-      <p class="output-sub">Languages, frameworks, and infra</p>
-      <div class="command-grid">${data.stackItems.map((item) => `<span class="chip">${item}</span>`).join('')}</div>
+      <p class="output-sub">Categorized as in resume flow</p>
+      <div class="stack-layout">${categoriesHtml}</div>
     </div>`
   );
   renderSuggestions(['projects', 'resume']);
@@ -162,14 +234,22 @@ const renderResume = () => {
     'Owns projects end-to-end: problem framing, development, deployment, and iteration.',
     'Brings leadership experience from technical teams and volunteer operations.',
   ];
+  const statItems = data.resumeStats.map((item) => `<span class="chip">${item.replace(/\s+/g, ' ')}</span>`).join('');
+  const expItems = getList('#resume .resume-block:nth-of-type(2) .resume-exp-item').map((item) => `<li>${item}</li>`).join('');
+  const eduItems = getList('#resume .resume-block:nth-of-type(3) .resume-exp-item').map((item) => `<li>${item}</li>`).join('');
   createEntry(
     'output',
     `<div class="output-shell">
       <h3>Resume Snapshot</h3>
-      <p class="output-sub">Summary, key strengths, and full document access</p>
+      <p class="output-sub">Summary, metrics, experience, and document access</p>
       <div class="output-stack">
+        <div class="command-grid">${statItems}</div>
         <p>${data.resumeSummary}</p>
         <ul>${resumeHighlights.map((point) => `<li>${point}</li>`).join('')}</ul>
+        <h4>Experience</h4>
+        <ul>${expItems || '<li>Experience details available in full PDF.</li>'}</ul>
+        <h4>Education</h4>
+        <ul>${eduItems || '<li>Education details available in full PDF.</li>'}</ul>
         <p><a href="${data.resumePdf}" target="_blank">Open Full PDF Resume</a></p>
       </div>
     </div>`
@@ -177,15 +257,38 @@ const renderResume = () => {
   renderSuggestions(['projects', 'contact']);
 };
 
+const renderResumeLive = () => {
+  createEntry(
+    'output',
+    `<div class="output-shell">
+      <h3>Resume Live View</h3>
+      <p class="output-sub">Embedded PDF preview</p>
+      <div class="resume-live-frame">
+        <iframe src="${data.resumePdf}#toolbar=0&navpanes=0" title="Hari Patel Resume live view"></iframe>
+      </div>
+      <p><a href="${data.resumePdf}" target="_blank">Open Full PDF Resume</a></p>
+    </div>`
+  );
+  renderSuggestions(['resume', 'projects', 'contact']);
+};
+
 const renderContact = () => {
-  const links = data.contactLinks.map((l) => `<li><a href="${l.href}" target="_blank">${l.label}</a></li>`).join('');
+  const links = data.contactLinks
+    .map(
+      (l) => `<a class="contact-card" href="${l.href}" target="_blank">
+        <strong>${l.label}</strong>
+        <span>Open profile</span>
+      </a>`
+    )
+    .join('');
   createEntry(
     'output',
     `<div class="output-shell">
       <h3>Contact</h3>
       <p class="output-sub">Open to projects, internships, and collaborations</p>
       <p>${data.contactText}</p>
-      <ul>${links}<li>${data.email}</li></ul>
+      <div class="contact-grid">${links}</div>
+      <div class="contact-email"><strong>Email:</strong> ${data.email}</div>
     </div>`
   );
   renderSuggestions(['about', 'projects']);
@@ -203,6 +306,14 @@ const renderHistory = () => {
 };
 
 const enterAdminMode = () => {
+  if (secretModeActive && document.body.classList.contains('admin-mode')) {
+    createEntry('output', '<h3>Secret Mode Active</h3><p>You are already in the hidden terminal mode. Type <strong>exit</strong> to leave.</p>');
+    renderSuggestions(['projects', 'history', 'exit']);
+    return;
+  }
+  secretSessionCounter += 1;
+  activeSecretSessionId = secretSessionCounter;
+  secretModeActive = true;
   document.body.classList.add('admin-mode');
   createEntry(
     'output',
@@ -212,9 +323,15 @@ const enterAdminMode = () => {
 };
 
 const exitAdminMode = () => {
+  const sessionId = activeSecretSessionId;
+  if (sessionId !== null) {
+    terminalOutput.querySelectorAll(`[data-secret-session="${sessionId}"]`).forEach((entry) => entry.remove());
+  }
+  secretModeActive = false;
+  activeSecretSessionId = null;
   document.body.classList.remove('admin-mode');
-  createEntry('output', '<h3>Admin Session Closed</h3><p>Returned to standard portfolio terminal.</p>');
   renderSuggestions(['help', 'about', 'projects']);
+  terminalOutput.scrollTop = terminalOutput.scrollHeight;
 };
 
 const renderGoodbyeScreen = () => {
@@ -231,14 +348,19 @@ const renderGoodbyeScreen = () => {
 
 const commandHandlers = {
   help: renderHelp,
-  menu: renderHelp,
   about: renderAbout,
   stack: renderStack,
   projects: renderProjects,
-  resume: renderResume,
+  resume: (args = '') => {
+    if (args.trim() === 'live') {
+      renderResumeLive();
+      return;
+    }
+    renderResume();
+  },
   contact: renderContact,
   history: renderHistory,
-  admin: enterAdminMode,
+  [secretCommand]: enterAdminMode,
   exit: () => {
     if (document.body.classList.contains('admin-mode')) {
       exitAdminMode();
@@ -256,28 +378,34 @@ const commandHandlers = {
   },
   clear: () => {
     terminalOutput.innerHTML = '';
-    renderSuggestions(['help', 'about', 'projects']);
+    commandHandlers.home();
   },
 };
 
 const closestCommand = (value) => {
   const v = value.toLowerCase();
-  return commandList.find((c) => c.startsWith(v[0] || '')) || 'help';
+  return visibleCommandList.find((c) => c.startsWith(v[0] || '')) || 'help';
 };
 
 const runCommand = async (raw) => {
-  const cmd = raw.trim().toLowerCase();
-  if (!cmd) return;
+  const normalized = raw.trim().toLowerCase().replace(/\s+/g, ' ');
+  if (!normalized) return;
+  const [base, ...rest] = normalized.split(' ');
+  const args = rest.join(' ');
   const commandEntry = createEntry('command', '');
-  await typeText(commandEntry, `hari@portfolio:~$ ${cmd}`);
-  history.push(cmd);
+  await typeText(commandEntry, `hari@portfolio:~$ ${normalized}`);
+  history.push(normalized);
   historyIndex = history.length;
-  if (commandHandlers[cmd]) {
-    commandHandlers[cmd]();
+  if (commandHandlers[base]) {
+    commandFrequency[base] = (commandFrequency[base] || 0) + 1;
+    if (!commandTransitions[lastExecutedBase]) commandTransitions[lastExecutedBase] = {};
+    commandTransitions[lastExecutedBase][base] = (commandTransitions[lastExecutedBase][base] || 0) + 1;
+    lastExecutedBase = base;
+    commandHandlers[base](args);
     return;
   }
-  createEntry('output', `<p>Command not found: <strong>${cmd}</strong>. Try <strong>${closestCommand(cmd)}</strong> or <strong>help</strong>.</p>`);
-  renderSuggestions(['help', closestCommand(cmd)]);
+  createEntry('output', `<p>Command not found: <strong>${normalized}</strong>. Try <strong>${closestCommand(normalized)}</strong> or <strong>help</strong>.</p>`);
+  renderSuggestions(['help', closestCommand(normalized)]);
 };
 
 const enqueueCommand = (raw) => {
@@ -346,6 +474,12 @@ terminalInput.addEventListener('keydown', (e) => {
 });
 
 terminalSuggestions.addEventListener('click', (e) => {
+  const btn = e.target.closest('button[data-command]');
+  if (!btn || !bootDone) return;
+  enqueueCommand(btn.dataset.command);
+});
+
+terminalOutput.addEventListener('click', (e) => {
   const btn = e.target.closest('button[data-command]');
   if (!btn || !bootDone) return;
   enqueueCommand(btn.dataset.command);

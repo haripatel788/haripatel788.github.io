@@ -636,10 +636,34 @@ footer {
   display: grid;
   gap: 0.6rem;
 }
+.output-stack h4 {
+  margin-top: 0.35rem;
+  font-size: 0.84rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #cfc5ea;
+}
 .command-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
+}
+.stack-layout {
+  display: grid;
+  gap: 0.85rem;
+}
+.stack-group {
+  border: 1px solid rgba(181, 169, 222, 0.24);
+  border-radius: 10px;
+  padding: 0.68rem 0.72rem;
+  background: rgba(29, 26, 40, 0.65);
+}
+.stack-group h4 {
+  margin-bottom: 0.45rem;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #d4cbef;
 }
 .chip {
   border: 1px solid rgba(181, 169, 222, 0.4);
@@ -648,6 +672,15 @@ footer {
   font-size: 0.76rem;
   color: #f0ebff;
   background: rgba(181, 169, 222, 0.15);
+}
+.inline-command {
+  appearance: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+.inline-command:hover {
+  background: rgba(181, 169, 222, 0.26);
+  border-color: rgba(181, 169, 222, 0.62);
 }
 .project-list {
   list-style: none;
@@ -671,6 +704,46 @@ footer {
   display: inline-block;
   font-size: 0.74rem;
   color: #dcd2f8;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.6rem;
+}
+.contact-card {
+  border: 1px solid rgba(181, 169, 222, 0.27);
+  border-radius: 10px;
+  padding: 0.68rem 0.75rem;
+  background: rgba(26, 24, 36, 0.7);
+  color: #f1ecff;
+  display: grid;
+  gap: 0.2rem;
+  text-decoration: none;
+}
+.contact-card span {
+  font-size: 0.78rem;
+  color: #d5cceb;
+}
+.contact-email {
+  border: 1px dashed rgba(181, 169, 222, 0.4);
+  border-radius: 10px;
+  padding: 0.55rem 0.7rem;
+  color: #f2eeff;
+  background: rgba(31, 28, 43, 0.65);
+}
+.resume-live-frame {
+  width: 100%;
+  border: 1px solid rgba(181, 169, 222, 0.32);
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(18, 16, 26, 0.92);
+}
+.resume-live-frame iframe {
+  display: block;
+  width: 100%;
+  height: min(60vh, 620px);
+  border: 0;
+  background: #fff;
 }
 .goodbye-screen {
   text-align: center;
@@ -809,6 +882,9 @@ footer {
     min-height: 48px;
     padding: 0;
   }
+  .resume-live-frame iframe {
+    height: min(52vh, 420px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -850,12 +926,37 @@ footer {
 .terminal-mode.admin-mode .entry.output a {
   color: #84ffc1;
 }
+.terminal-mode.admin-mode .output-sub {
+  color: #8fe7ae !important;
+}
 .terminal-mode.admin-mode .entry {
   border-color: rgba(32, 255, 126, 0.2);
   background: rgba(1, 14, 8, 0.88);
 }
 .terminal-mode.admin-mode .entry::before {
   background: linear-gradient(180deg, rgba(32, 255, 126, 0.75), rgba(127, 255, 170, 0.35));
+}
+.terminal-mode.admin-mode .chip,
+.terminal-mode.admin-mode .inline-command {
+  border-color: rgba(32, 255, 126, 0.45);
+  color: #bfffd3;
+  background: rgba(8, 42, 23, 0.55);
+}
+.terminal-mode.admin-mode .inline-command:hover {
+  background: rgba(18, 62, 34, 0.72);
+  border-color: rgba(32, 255, 126, 0.68);
+}
+.terminal-mode.admin-mode .stack-group,
+.terminal-mode.admin-mode .project-row,
+.terminal-mode.admin-mode .contact-card,
+.terminal-mode.admin-mode .contact-email {
+  border-color: rgba(32, 255, 126, 0.28);
+  background: rgba(5, 28, 16, 0.72);
+}
+.terminal-mode.admin-mode .stack-group h4,
+.terminal-mode.admin-mode .project-row .tag,
+.terminal-mode.admin-mode .contact-card span {
+  color: #9cf5bc;
 }
 .terminal-mode.admin-mode .terminal-input,
 .terminal-mode.admin-mode .terminal-run,
