@@ -149,7 +149,7 @@ section { position: relative; z-index: 1; padding: clamp(4rem,10vw,8rem) clamp(1
 .tech-category-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 1rem; }
 .tech-category-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 .tech-pills { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-.tech-pill { font-size: 0.82rem; font-weight: 500; padding: 0.4rem 1rem; border-radius: 100px; border: 1px solid var(--border); color: var(--gray-light); background: var(--bg-card); transition: all 0.2s ease; cursor: default; }
+.tech-pill { font-size: 0.82rem; font-weight: 500; padding: 0.4rem 1rem; border-radius: 100px; border: 1px solid var(--border); color: var(--gray-light); background: var(--bg-card); transition: transform 0.32s var(--ease-out), border-color 0.28s var(--ease-out), color 0.28s var(--ease-out), box-shadow 0.32s var(--ease-out); cursor: default; }
 .tech-pill.featured { border-color: rgba(175,158,205,0.4); color: var(--lilac-bright); background: var(--lilac-dim); }
 .tech-pill:hover { border-color: var(--lilac); color: var(--white); transform: translateY(-2px); }
 
@@ -171,9 +171,9 @@ section { position: relative; z-index: 1; padding: clamp(4rem,10vw,8rem) clamp(1
 .project-name { font-family: var(--font-display); font-size: 1.5rem; letter-spacing: -0.02em; color: var(--white); margin-bottom: 0.75rem; line-height: 1.2; }
 .bento-r1c1 .project-name, .bento-r2c2 .project-name { font-size: 1.9rem; }
 .project-desc { font-size: 0.88rem; line-height: 1.7; color: var(--gray); flex: 1; margin-bottom: 1.5rem; }
-.project-footer { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 0.7rem; margin-top: auto; }
+.project-footer { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 0.7rem; margin-top: auto; }
 .project-tag { justify-self: start; width: fit-content; max-width: 100%; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; line-height: 1.35; padding: 0.3rem 0.7rem; border-radius: 100px; background: var(--lilac-dim); color: var(--lilac); border: 1px solid rgba(175,158,205,0.25); overflow-wrap: anywhere; }
-.project-link { justify-self: end; font-size: 0.82rem; font-weight: 600; color: var(--gray-light); display: inline-flex; align-items: center; gap: 0.3rem; transition: all 0.2s ease; }
+.project-link { justify-self: end; align-self: center; font-size: 0.82rem; font-weight: 600; color: var(--gray-light); display: inline-flex; align-items: center; gap: 0.3rem; transition: all 0.2s ease; }
 .project-link svg { transition: transform 0.2s ease; }
 .project-link:hover { color: var(--lilac-bright); }
 .project-link:hover svg { transform: translate(2px,-2px); }
