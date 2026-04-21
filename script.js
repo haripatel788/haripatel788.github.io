@@ -98,7 +98,11 @@ const renderSuggestions = (commands = []) => {
 const renderHelp = () => {
   createEntry(
     'output',
-    `<h3>Available commands</h3><ul>${commandList.map((c) => `<li><strong>${c}</strong></li>`).join('')}</ul>`
+    `<div class="output-shell">
+      <h3>Command Directory</h3>
+      <p class="output-sub">Use these commands to navigate the portfolio terminal.</p>
+      <div class="command-grid">${commandList.map((c) => `<span class="chip">${c}</span>`).join('')}</div>
+    </div>`
   );
   renderSuggestions(['about', 'projects', 'resume', 'contact']);
 };
@@ -106,40 +110,95 @@ const renderHelp = () => {
 const renderAbout = () => {
   createEntry(
     'output',
-    `<h3>${data.aboutHeading || 'About'}</h3>${data.aboutParagraphs.map((p) => `<p>${p}</p>`).join('')}`
+    `<div class="output-shell">
+      <h3>${data.aboutHeading || 'About'}</h3>
+      <p class="output-sub">Identity + focus areas</p>
+      <div class="output-stack">${data.aboutParagraphs.map((p) => `<p>${p}</p>`).join('')}</div>
+    </div>`
   );
   renderSuggestions(['stack', 'projects', 'contact']);
 };
 
 const renderStack = () => {
-  createEntry('output', `<h3>Stack</h3><p>${data.stackItems.join(' • ')}</p>`);
+  createEntry(
+    'output',
+    `<div class="output-shell">
+      <h3>Stack</h3>
+      <p class="output-sub">Languages, frameworks, and infra</p>
+      <div class="command-grid">${data.stackItems.map((item) => `<span class="chip">${item}</span>`).join('')}</div>
+    </div>`
+  );
   renderSuggestions(['projects', 'resume']);
 };
 
 const renderProjects = () => {
   const html = projects
-    .map((p) => `<li><strong>${p.name}</strong> — ${p.desc}<br><em>${p.tag}</em> · <a href="${p.link}" target="_blank">${p.linkLabel}</a></li>`)
+    .map(
+      (p) => `<li class="project-row">
+        <div>
+          <strong>${p.name}</strong>
+          <p>${p.desc}</p>
+          <span class="tag">${p.tag}</span>
+        </div>
+        <a href="${p.link}" target="_blank">${p.linkLabel}</a>
+      </li>`
+    )
     .join('');
-  createEntry('output', `<h3>Projects</h3><ul>${html}</ul>`);
+  createEntry(
+    'output',
+    `<div class="output-shell">
+      <h3>Projects</h3>
+      <p class="output-sub">Selected builds and shipped work</p>
+      <ul class="project-list">${html}</ul>
+    </div>`
+  );
   renderSuggestions(['resume', 'contact']);
 };
 
 const renderResume = () => {
+  const resumeHighlights = [
+    'Built and deployed full-stack applications with active users and measurable outcomes.',
+    'Combines backend architecture, data systems, and ML workflow implementation.',
+    'Owns projects end-to-end: problem framing, development, deployment, and iteration.',
+    'Brings leadership experience from technical teams and volunteer operations.',
+  ];
   createEntry(
     'output',
-    `<h3>Resume</h3><p>${data.resumeSummary}</p><p><a href="${data.resumePdf}" target="_blank">Open PDF Resume</a></p>`
+    `<div class="output-shell">
+      <h3>Resume Snapshot</h3>
+      <p class="output-sub">Summary, key strengths, and full document access</p>
+      <div class="output-stack">
+        <p>${data.resumeSummary}</p>
+        <ul>${resumeHighlights.map((point) => `<li>${point}</li>`).join('')}</ul>
+        <p><a href="${data.resumePdf}" target="_blank">Open Full PDF Resume</a></p>
+      </div>
+    </div>`
   );
   renderSuggestions(['projects', 'contact']);
 };
 
 const renderContact = () => {
   const links = data.contactLinks.map((l) => `<li><a href="${l.href}" target="_blank">${l.label}</a></li>`).join('');
-  createEntry('output', `<h3>Contact</h3><p>${data.contactText}</p><ul>${links}<li>${data.email}</li></ul>`);
+  createEntry(
+    'output',
+    `<div class="output-shell">
+      <h3>Contact</h3>
+      <p class="output-sub">Open to projects, internships, and collaborations</p>
+      <p>${data.contactText}</p>
+      <ul>${links}<li>${data.email}</li></ul>
+    </div>`
+  );
   renderSuggestions(['about', 'projects']);
 };
 
 const renderHistory = () => {
-  createEntry('output', `<h3>History</h3><p>${history.length ? history.join(' → ') : 'No commands yet.'}</p>`);
+  createEntry(
+    'output',
+    `<div class="output-shell">
+      <h3>Command History</h3>
+      <p>${history.length ? history.join(' → ') : 'No commands yet.'}</p>
+    </div>`
+  );
   renderSuggestions(['help']);
 };
 
@@ -189,7 +248,10 @@ const commandHandlers = {
   },
   home: () => {
     terminalOutput.innerHTML = '';
-    createEntry('output', '<h3>Welcome</h3><p>Terminal ready. Type <strong>help</strong> to explore.</p>');
+    createEntry(
+      'output',
+      '<div class="output-shell"><h3>Welcome</h3><p class="output-sub">HariOS terminal ready</p><p>Type <strong>help</strong> to explore or use the quick command chips.</p></div>'
+    );
     renderSuggestions(['help', 'about', 'projects', 'resume', 'contact']);
   },
   clear: () => {
