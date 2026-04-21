@@ -72,10 +72,18 @@ const terminalOverlay = document.getElementById('terminalLaunchOverlay');
 const terminalClose = document.getElementById('terminalClose');
 
 if (terminalFab && terminalOverlay && terminalClose) {
+  const footer = document.querySelector('footer');
   const setLaunchOrigin = () => {
     const rect = terminalFab.getBoundingClientRect();
     terminalOverlay.style.setProperty('--launch-x', `${rect.left + rect.width / 2}px`);
     terminalOverlay.style.setProperty('--launch-y', `${rect.top + rect.height / 2}px`);
+  };
+
+  const updateFabFooterDocking = () => {
+    if (!footer) return;
+    const footerTopInViewport = footer.getBoundingClientRect().top;
+    const overlap = Math.max(0, window.innerHeight - footerTopInViewport);
+    terminalFab.style.setProperty('--fab-dock-shift', `${overlap}px`);
   };
 
   terminalFab.addEventListener('click', () => {
@@ -89,6 +97,9 @@ if (terminalFab && terminalOverlay && terminalClose) {
     document.body.style.overflow = '';
   };
 
+  updateFabFooterDocking();
+  window.addEventListener('scroll', updateFabFooterDocking, { passive: true });
+  window.addEventListener('resize', updateFabFooterDocking);
   window.addEventListener('resize', setLaunchOrigin);
   terminalClose.addEventListener('click', closeTerminal);
   terminalOverlay.addEventListener('click', (e) => { if (e.target === terminalOverlay) closeTerminal(); });

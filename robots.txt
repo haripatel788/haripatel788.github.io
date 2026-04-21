@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://haripatel788.github.io/sitemap.xml

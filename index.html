@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hari Patel — CS Student</title>
+  <link rel="icon" type="image/png" href="2.png">
+  <meta property="og:title" content="Hari Patel — CS Student & Developer">
+  <meta property="og:description" content="Building full-stack apps and ML pipelines. Drexel CS '30.">
+  <meta property="og:image" content="https://haripatel788.github.io/2.png">
+  <meta property="og:url" content="https://haripatel788.github.io">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
@@ -16,7 +22,7 @@
   <div class="glow-blob glow-blob-2"></div>
 
   <nav>
-    <a href="#hero" class="nav-logo">hari<span>.</span></a>
+    <a href="#hero" class="nav-logo">hari patel<span>.</span></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Stack</a></li>
@@ -24,7 +30,10 @@
       <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#contact" class="nav-cta">Get in touch</a>
+    <div class="nav-actions">
+      <span class="nav-availability">● Available Summer 2026 internships</span>
+      <a href="#contact" class="nav-cta">Get in touch</a>
+    </div>
     <button class="ham-btn" id="hamBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </nav>
 
@@ -38,11 +47,11 @@
 
   <section id="hero">
     <div class="hero-inner">
-      <p class="hero-eyebrow">CS Student · Full-Stack Developer</p>
+      <p class="hero-eyebrow">Building AI-powered civic tools · Drexel CS '30</p>
       <h1 class="hero-name">Hari<br><em>Patel.</em></h1>
       <p class="hero-title">
         Studying <strong>Computer Science</strong> at Drexel's Pennoni Honors College.<br>
-        I plan on adding <strong>ML/AI</strong> as a second major in the future.<br>
+        Pursuing a major in <strong>Computer Science</strong> and planning on adding a second major in <strong>Machine Learning</strong>.<br>
         I build fast, thoughtful web applications - from backend APIs to polished UIs.
       </p>
       <div class="hero-ctas">
@@ -63,8 +72,8 @@
       <div class="about-text">
         <p class="section-label reveal">About me</p>
         <h2 class="section-title reveal reveal-delay-1">Building things that<br><em>actually work.</em></h2>
-        <p class="reveal reveal-delay-2">Hey — I'm Hari. I'm a <strong>Computer Science student</strong> at Drexel University's Pennoni Honors College, where I'm planning to add a <strong>Machine Learning </strong>as a second major.</p>
-        <p class="reveal reveal-delay-3">My focus is <strong>full-stack development</strong>, particularly backend architecture, database design, and <strong>building products</strong> people genuinely use. I enjoy turning complex problems into clean, maintainable systems.</p>
+        <p class="reveal reveal-delay-2">Hey - I'm Hari. I'm a <strong>Computer Science student</strong> at Drexel University's Pennoni Honors College, planning on pursuing a second major in <strong>Machine Learning</strong>.</p>
+        <p class="reveal reveal-delay-3">I care about the full picture - from designing Postgres schemas and hardening API security to shipping polished UIs that real users interact with. Most of my projects went from zero to deployed with actual users.</p>
         <div class="about-chips stagger-parent reveal reveal-delay-4">
           <span class="chip stagger-child">Drexel University</span>
           <span class="chip stagger-child">Pennoni Honors College</span>
@@ -142,13 +151,14 @@
 
     <div class="projects-bento">
 
-      <div class="project-card bento-r1c1 reveal">
+      <div class="project-card has-preview bento-r1c1 reveal">
         <p class="project-number">01 — Featured</p>
+        <img class="project-preview" src="marketpulse-screenshot.png" alt="MarketPulse project preview">
         <h3 class="project-name">MarketPulse</h3>
         <p class="project-desc">Stock prediction pairing a Random Forest model with live NLP sentiment analysis to forecast price direction up to 30 days out using FinBERT and the Gemini API.</p>
         <div class="project-footer">
           <span class="project-tag">Python · Scikit-Learn · Gemini API</span>
-          <a href="https://stock-predictor-pqb7.onrender.com" target="_blank" class="project-link">Live Site <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="https://marketpulse-ba4x.onrender.com" target="_blank" class="project-link">Live Site <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
@@ -164,7 +174,7 @@
 
 
       <div class="project-card bento-r2c1 reveal reveal-delay-1">
-        <p class="project-number">04</p>
+        <p class="project-number">07</p>
         <h3 class="project-name">Session</h3>
         <p class="project-desc">Productivity web app with Clerk auth, Prisma ORM, server-side rendering, and protected routes. Focused on performance and a clean, distraction-free experience.</p>
         <div class="project-footer">
@@ -173,8 +183,9 @@
         </div>
       </div>
 
-      <div class="project-card bento-r2c2 reveal reveal-delay-2">
+      <div class="project-card has-preview bento-r2c2 reveal reveal-delay-2">
         <p class="project-number">02 — Featured</p>
+        <img class="project-preview" src="sixthandmarket-screenshot.png" alt="Sixth and Market project preview">
         <h3 class="project-name">Sixth & Market</h3>
         <p class="project-desc">Civic platform built for Codefest 2026 that rewrites generic 311 reports, detects duplicate issues, and maps broadband dead zones using predictive risk scoring.</p>
         <div class="project-footer">
@@ -189,8 +200,8 @@
         <h3 class="project-name">CallReminderBot</h3>
         <p class="project-desc">Serverless scheduling bot that automates meeting role assignments via a custom fairness algorithm. Integrates Google Sheets for persistent state and Telegram for real-time notifications.</p>
         <div class="project-footer">
-          <span class="project-tag">Python · GitHub Actions · Google Sheets API</span>
-          <a href="#" class="project-link">Repo <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <span class="project-tag">Python · Github Actions</span>
+          <a href="https://github.com/haripatel788/weekly-call-reminder" target="_blank" class="project-link">Repo <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
@@ -205,7 +216,7 @@
       </div>
 
       <div class="project-card bento-r3c3 reveal reveal-delay-4">
-        <p class="project-number">07</p>
+        <p class="project-number">08</p>
         <h3 class="project-name">Java RPG</h3>
         <p class="project-desc">Text-based RPG in Java showcasing OOP principles — inheritance, polymorphism, complex conditional logic, and dynamic user input for an immersive narrative.</p>
         <div class="project-footer">
@@ -235,12 +246,12 @@
               <div class="resume-stat-label">PrepGo users</div>
             </div>
             <div class="resume-stat">
-              <div class="resume-stat-value">7+</div>
-              <div class="resume-stat-label">Live projects</div>
+              <div class="resume-stat-value">300</div>
+              <div class="resume-stat-label">Tree RF model</div>
             </div>
             <div class="resume-stat">
-              <div class="resume-stat-value">15</div>
-              <div class="resume-stat-label">Volunteers led</div>
+              <div class="resume-stat-value">27</div>
+              <div class="resume-stat-label">Engineered features</div>
             </div>
           </div>
 
@@ -296,7 +307,10 @@
             <span class="resume-topbar-label">Hari_Patel_Resume.pdf</span>
             <button class="resume-topbar-expand" id="openResume2">Expand ↗</button>
           </div>
-          <iframe class="resume-embed" src="hari_resume.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Hari Patel Résumé preview"></iframe>
+          <div class="resume-iframe-wrap">
+            <iframe class="resume-embed" src="hari_resume.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Hari Patel Résumé preview"></iframe>
+            <p class="resume-fallback">PDF not loading? <a href="hari_resume.pdf" download>Download it directly</a>.</p>
+          </div>
         </div>
       </div>
     </div>
