@@ -26,3 +26,20 @@ if (closeResume) closeResume.addEventListener('click', () => modal.classList.rem
 
 modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('open'); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') modal.classList.remove('open'); });
+
+const terminalFab = document.getElementById('terminalFab');
+const terminalOverlay = document.getElementById('terminalLaunchOverlay');
+const terminalClose = document.getElementById('terminalClose');
+
+if (terminalFab && terminalOverlay && terminalClose) {
+  terminalFab.addEventListener('click', () => {
+    terminalOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+  const closeTerminal = () => {
+    terminalOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+  terminalClose.addEventListener('click', closeTerminal);
+  terminalOverlay.addEventListener('click', (e) => { if (e.target === terminalOverlay) closeTerminal(); });
+}

@@ -4,17 +4,59 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hari Patel — CS Student</title>
+  <link rel="icon" type="image/png" href="../2.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="portfolio-shell terminal-mode">
+  <a class="site-logo-fixed" href="#" aria-label="Hari Patel home">
+    <img src="logo.png" alt="Hari Patel logo" class="site-logo-image" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex';" />
+    <span class="site-logo-fallback" style="display:none;">hari<span>.</span></span>
+  </a>
+  <div class="boot-overlay" id="bootOverlay" role="status" aria-live="polite">
+    <div class="boot-window">
+      <p class="boot-title">HariOS Portfolio Terminal</p>
+      <div class="boot-lines" id="bootLines"></div>
+      <button class="boot-skip" id="bootSkip">Skip boot</button>
+    </div>
+  </div>
+
+  <main class="terminal-shell" aria-label="Portfolio terminal interface">
+    <header class="terminal-topbar">
+      <div class="terminal-lights"><span></span><span></span><span></span></div>
+      <p class="terminal-title">hari@portfolio: ~</p>
+      <p class="terminal-hint">type <code>help</code> or tap a command</p>
+    </header>
+
+    <section class="terminal-output" id="terminalOutput" aria-live="polite"></section>
+
+    <section class="terminal-suggestions" id="terminalSuggestions" aria-label="Command suggestions"></section>
+
+    <form class="terminal-input-row" id="terminalForm" autocomplete="off">
+      <label class="sr-only" for="terminalInput">Terminal command input</label>
+      <span class="prompt-label">hari@portfolio:~$</span>
+      <input id="terminalInput" class="terminal-input" type="text" placeholder="Type a command..." />
+      <button type="submit" class="terminal-run">Run</button>
+    </form>
+
+    <nav class="mobile-chip-dock" aria-label="Quick commands">
+      <button class="quick-chip" data-command="about">about</button>
+      <button class="quick-chip" data-command="projects">projects</button>
+      <button class="quick-chip" data-command="resume">resume</button>
+      <button class="quick-chip" data-command="contact">contact</button>
+      <button class="quick-chip" data-command="help">help</button>
+    </nav>
+  </main>
+
+  <div id="portfolioSource" hidden>
 
   <div class="glow-blob glow-blob-1"></div>
   <div class="glow-blob glow-blob-2"></div>
+  <div class="glow-blob glow-blob-3"></div>
 
-  <nav>
+  <nav class="site-nav">
     <a href="#hero" class="nav-logo">hari<span>.</span></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
@@ -36,7 +78,7 @@
   </div>
 
   <section id="hero">
-    <div class="hero-inner">
+    <div class="hero-inner profile-brief">
       <p class="hero-eyebrow">CS Student · Full-Stack Developer</p>
       <h1 class="hero-name">Hari<br><em>Patel.</em></h1>
       <p class="hero-title">
@@ -44,7 +86,7 @@
         I plan on adding <strong>ML/AI</strong> as a second major in the future.<br>
         I build fast, thoughtful web applications - from backend APIs to polished UIs.
       </p>
-      <div class="hero-ctas">
+      <div class="hero-ctas brief-ctas">
         <a href="#projects" class="btn-primary">View my work</a>
         <a href="#contact" class="btn-ghost">Say hello →</a>
       </div>
@@ -57,7 +99,7 @@
   <section id="about">
     <div class="about-grid">
       <div class="about-photo-wrap reveal">
-        <img src="2.png" alt="Hari Patel illustration" />
+        <img src="../2.png" alt="Hari Patel illustration" />
       </div>
       <div class="about-text">
         <p class="section-label reveal">About me</p>
@@ -139,9 +181,9 @@
       </div>
     </div>
 
-    <div class="projects-bento">
+    <div class="projects-bento case-grid">
 
-      <div class="project-card bento-r1c1 reveal">
+      <div class="project-card case-tile featured-case bento-r1c1 reveal">
         <p class="project-number">01 — Featured</p>
         <h3 class="project-name">MarketPulse</h3>
         <p class="project-desc">Stock prediction pairing a Random Forest model with live NLP sentiment analysis to forecast price direction up to 30 days out using FinBERT and the Gemini API.</p>
@@ -151,7 +193,7 @@
         </div>
       </div>
 
-      <div class="project-card bento-r1c2 reveal reveal-delay-1">
+      <div class="project-card case-tile bento-r1c2 reveal reveal-delay-1">
         <p class="project-number">03</p>
         <h3 class="project-name">PrepGO</h3>
         <p class="project-desc">SAT prep platform serving 30+ active users across 250+ reading and math questions, built and deployed with a normalized PostgreSQL schema and JWT security.</p>
@@ -162,7 +204,7 @@
       </div>
 
 
-      <div class="project-card bento-r2c1 reveal reveal-delay-1">
+      <div class="project-card case-tile bento-r2c1 reveal reveal-delay-1">
         <p class="project-number">04</p>
         <h3 class="project-name">Session</h3>
         <p class="project-desc">Productivity web app with Clerk auth, Prisma ORM, server-side rendering, and protected routes. Focused on performance and a clean, distraction-free experience.</p>
@@ -172,7 +214,7 @@
         </div>
       </div>
 
-      <div class="project-card bento-r2c2 reveal reveal-delay-2">
+      <div class="project-card case-tile featured-case bento-r2c2 reveal reveal-delay-2">
         <p class="project-number">02 — Featured</p>
         <h3 class="project-name">Sixth & Market</h3>
         <p class="project-desc">Civic platform built for Codefest 2026 that rewrites generic 311 reports, detects duplicate issues, and maps broadband dead zones using predictive risk scoring.</p>
@@ -183,7 +225,7 @@
       </div>
 
 
-      <div class="project-card bento-r3c1 reveal reveal-delay-2">
+      <div class="project-card case-tile bento-r3c1 reveal reveal-delay-2">
         <p class="project-number">05</p>
         <h3 class="project-name">CallReminderBot</h3>
         <p class="project-desc">Serverless scheduling bot that automates meeting role assignments via a custom fairness algorithm. Integrates Google Sheets for persistent state and Telegram for real-time notifications.</p>
@@ -193,7 +235,7 @@
         </div>
       </div>
 
-      <div class="project-card bento-r3c2 reveal reveal-delay-3">
+      <div class="project-card case-tile bento-r3c2 reveal reveal-delay-3">
         <p class="project-number">06</p>
         <h3 class="project-name">Smaranam</h3>
         <p class="project-desc">Community platform for religious education. Firebase Realtime Database handles high-concurrency sync, enabling smooth collaborative experiences for users.</p>
@@ -203,7 +245,7 @@
         </div>
       </div>
 
-      <div class="project-card bento-r3c3 reveal reveal-delay-4">
+      <div class="project-card case-tile bento-r3c3 reveal reveal-delay-4">
         <p class="project-number">07</p>
         <h3 class="project-name">Java RPG</h3>
         <p class="project-desc">Text-based RPG in Java showcasing OOP principles — inheritance, polymorphism, complex conditional logic, and dynamic user input for an immersive narrative.</p>
@@ -218,7 +260,7 @@
 
 
   <section id="resume">
-    <div class="resume-inner">
+    <div class="resume-inner evidence-panel">
       <p class="section-label reveal">Resume</p>
       <h2 class="section-title reveal reveal-delay-1">The full <em>picture.</em></h2>
 
@@ -278,7 +320,7 @@
           </div>
 
           <div class="resume-ctas reveal reveal-delay-3">
-            <a href="hari_resume.pdf" download="Hari_Patel_Resume.pdf" class="resume-btn-dl">
+            <a href="../hari_resume.pdf" download="Hari_Patel_Resume.pdf" class="resume-btn-dl">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Download PDF
             </a>
@@ -295,7 +337,7 @@
             <span class="resume-topbar-label">Hari_Patel_Resume.pdf</span>
             <button class="resume-topbar-expand" id="openResume2">Expand ↗</button>
           </div>
-          <iframe class="resume-embed" src="hari_resume.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Hari Patel Résumé preview"></iframe>
+          <iframe class="resume-embed" src="../hari_resume.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Hari Patel Résumé preview"></iframe>
         </div>
       </div>
     </div>
@@ -307,20 +349,20 @@
       <div class="resume-modal-header">
         <span class="resume-modal-title">Hari Patel — Resume</span>
         <div class="resume-modal-actions">
-          <a href="hari_resume.pdf" download="Hari_Patel_Resume.pdf" class="resume-modal-dl">
+          <a href="../hari_resume.pdf" download="Hari_Patel_Resume.pdf" class="resume-modal-dl">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Download
           </a>
           <button class="resume-modal-close" id="closeResume">✕</button>
         </div>
       </div>
-      <iframe class="resume-modal-frame" src="hari_resume.pdf#toolbar=0" title="Hari Patel Resume full screen"></iframe>
+      <iframe class="resume-modal-frame" src="../hari_resume.pdf#toolbar=0" title="Hari Patel Resume full screen"></iframe>
     </div>
   </div>
 
 
   <section id="contact">
-    <div class="contact-inner">
+    <div class="contact-inner collaborate-panel">
       <p class="section-label reveal" style="justify-content:center">Get in touch</p>
       <h2 class="contact-big reveal reveal-delay-1">Let's build<br><em>something.</em></h2>
       <p class="contact-sub reveal reveal-delay-2">I'm always open to hearing about new projects, opportunities, or just a good conversation about tech.</p>
@@ -346,15 +388,7 @@
     <span class="footer-copy">Designed by Claude &amp; Built by Hari · 2026</span>
   </footer>
 
-  <button class="terminal-fab" id="terminalFab" aria-label="Open terminal mode">>_</button>
-  <div class="terminal-launch-overlay" id="terminalLaunchOverlay" aria-hidden="true">
-    <div class="terminal-launch-circle" id="terminalLaunchCircle"></div>
-    <div class="terminal-launch-panel" id="terminalLaunchPanel">
-      <button class="terminal-close" id="terminalClose" aria-label="Close terminal mode">✕</button>
-      <iframe class="terminal-embed" src="terminal/index.html" title="Terminal mode"></iframe>
-    </div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
