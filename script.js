@@ -42,4 +42,9 @@ if (terminalFab && terminalOverlay && terminalClose) {
   };
   terminalClose.addEventListener('click', closeTerminal);
   terminalOverlay.addEventListener('click', (e) => { if (e.target === terminalOverlay) closeTerminal(); });
+  window.addEventListener('message', (event) => {
+    if (event.data && event.data.type === 'close-terminal-overlay') {
+      closeTerminal();
+    }
+  });
 }

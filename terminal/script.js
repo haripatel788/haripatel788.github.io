@@ -622,6 +622,12 @@ const exitAdminMode = () => {
   terminalOutput.scrollTop = terminalOutput.scrollHeight;
 };
 
+const requestTerminalClose = () => {
+  if (window.parent && window.parent !== window) {
+    window.parent.postMessage({ type: 'close-terminal-overlay' }, '*');
+  }
+};
+
 const renderGoodbyeScreen = () => {
   terminalOutput.innerHTML = '';
   createEntry(
@@ -654,7 +660,7 @@ const commandHandlers = {
       exitAdminMode();
       return;
     }
-    renderGoodbyeScreen();
+    requestTerminalClose();
   },
   home: () => {
     terminalOutput.innerHTML = '';

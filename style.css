@@ -212,8 +212,16 @@ footer { padding: 2rem clamp(1.5rem,8vw,6rem); border-top: 1px solid var(--borde
   cursor: pointer;
   z-index: 450;
   box-shadow: 0 16px 36px rgba(0,0,0,0.35);
+  transition: transform 0.28s var(--ease-out), box-shadow 0.28s var(--ease-out), filter 0.28s var(--ease-out);
 }
-.terminal-fab:hover { transform: translateY(-2px); }
+.terminal-fab:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 20px 42px rgba(0,0,0,0.42);
+  filter: saturate(1.1);
+}
+.terminal-fab:active {
+  transform: translateY(-1px) scale(0.98);
+}
 
 .terminal-launch-overlay {
   position: fixed;
@@ -221,7 +229,7 @@ footer { padding: 2rem clamp(1.5rem,8vw,6rem); border-top: 1px solid var(--borde
   z-index: 500;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.35s ease;
+  transition: opacity 0.4s ease;
 }
 .terminal-launch-overlay.open {
   opacity: 1;
@@ -234,12 +242,14 @@ footer { padding: 2rem clamp(1.5rem,8vw,6rem); border-top: 1px solid var(--borde
   width: 1px;
   height: 1px;
   border-radius: 50%;
-  transform: translate(50%, 50%) scale(0);
-  background: radial-gradient(circle, rgba(175,158,205,0.35), rgba(15,13,19,0.95) 60%);
-  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translate(50%, 50%) scale(0.02);
+  background: radial-gradient(circle, rgba(200,184,232,0.42), rgba(175,158,205,0.24) 36%, rgba(15,13,19,0.96) 66%);
+  transition: transform 0.85s cubic-bezier(0.2, 0.9, 0.2, 1), filter 0.85s ease;
+  filter: blur(0px);
 }
 .terminal-launch-overlay.open .terminal-launch-circle {
   transform: translate(50%, 50%) scale(2200);
+  filter: blur(1.5px);
 }
 .terminal-launch-panel {
   position: absolute;
@@ -247,7 +257,7 @@ footer { padding: 2rem clamp(1.5rem,8vw,6rem); border-top: 1px solid var(--borde
   padding: clamp(0.8rem, 2vw, 1.2rem);
   opacity: 0;
   transform: translateY(14px) scale(0.985);
-  transition: opacity 0.35s ease 0.28s, transform 0.35s ease 0.28s;
+  transition: opacity 0.42s ease 0.34s, transform 0.42s ease 0.34s;
 }
 .terminal-launch-overlay.open .terminal-launch-panel {
   opacity: 1;
@@ -257,14 +267,21 @@ footer { padding: 2rem clamp(1.5rem,8vw,6rem); border-top: 1px solid var(--borde
   position: absolute;
   top: clamp(14px, 2vw, 22px);
   right: clamp(14px, 2vw, 22px);
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  border: 1px solid rgba(175,158,205,0.4);
-  background: rgba(15,13,19,0.65);
-  color: var(--white);
+  border: 1px solid rgba(200,184,232,0.52);
+  background: rgba(20,16,29,0.75);
+  color: var(--lilac-bright);
   cursor: pointer;
   z-index: 2;
+  font-size: 1.1rem;
+  transition: transform 0.24s var(--ease-out), background 0.24s ease, box-shadow 0.24s ease;
+}
+.terminal-close:hover {
+  transform: scale(1.08) rotate(4deg);
+  background: rgba(33,26,47,0.88);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
 }
 .terminal-embed {
   width: 100%;
@@ -321,4 +338,5 @@ footer { padding: 2rem clamp(1.5rem,8vw,6rem); border-top: 1px solid var(--borde
   .resume-ctas { flex-direction:column; }
   .terminal-fab { width: 54px; height: 54px; right: 14px; bottom: 14px; }
   .terminal-launch-circle { right: 41px; bottom: 41px; }
+  .terminal-close { width: 40px; height: 40px; }
 }

@@ -435,8 +435,8 @@ footer {
 /* Terminal-first redesign */
 .terminal-mode {
   height: 100vh;
-  background: #1b1a24;
-  color: #efeaff;
+  background: var(--bg);
+  color: var(--white);
   display: grid;
   place-items: center;
   padding: 1.5rem;
@@ -495,7 +495,7 @@ footer {
   position: fixed;
   inset: 0;
   z-index: 500;
-  background: radial-gradient(circle at 50% 0%, rgba(181, 169, 222, 0.25), transparent 44%), #1a1823;
+  background: radial-gradient(circle at 50% 0%, rgba(175, 158, 205, 0.22), transparent 44%), #0f0d13;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -514,7 +514,7 @@ footer {
 }
 .boot-title {
   font-family: var(--font-display);
-  color: #d8ceff;
+  color: var(--lilac-bright);
   margin-bottom: 0.8rem;
   font-size: 1.2rem;
 }
@@ -524,17 +524,17 @@ footer {
   overflow: auto;
   font-size: 0.86rem;
   line-height: 1.6;
-  color: #d9d2f3;
+  color: var(--gray-light);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 }
 .boot-lines p { margin: 0.25rem 0; }
 .boot-skip {
   margin-top: 0.9rem;
   min-height: 44px;
-  border: 1px solid rgba(181, 169, 222, 0.6);
+  border: 1px solid rgba(175, 158, 205, 0.45);
   border-radius: 10px;
-  background: rgba(181, 169, 222, 0.15);
-  color: #f0ebff;
+  background: var(--lilac-dim);
+  color: var(--white);
   font-weight: 600;
   padding: 0 1rem;
   cursor: pointer;
@@ -542,9 +542,9 @@ footer {
 .terminal-shell {
   width: min(1100px, 96vw);
   margin: 0;
-  border: 1px solid rgba(181, 169, 222, 0.35);
+  border: 1px solid var(--border-hover);
   border-radius: 14px;
-  background: linear-gradient(180deg, #2a2737 0%, #1f1d2a 100%);
+  background: linear-gradient(180deg, #171420 0%, #0f0d13 100%);
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
   display: grid;
   grid-template-rows: auto 1fr auto auto;
@@ -557,8 +557,8 @@ footer {
   align-items: center;
   gap: 0.9rem;
   padding: 1rem 1.2rem;
-  border-bottom: 1px solid rgba(181, 169, 222, 0.25);
-  background: rgba(42, 39, 55, 0.78);
+  border-bottom: 1px solid var(--border);
+  background: rgba(15,13,19,0.78);
 }
 .terminal-lights { display: flex; gap: 0.4rem; }
 .terminal-lights span {
@@ -571,12 +571,12 @@ footer {
 .terminal-lights span:nth-child(3) { background: #4ade80; }
 .terminal-title {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-  color: #e7e0ff;
+  color: var(--lilac-bright);
   font-size: 0.94rem;
 }
 .terminal-hint {
   margin-left: auto;
-  color: #c5bedf;
+  color: var(--gray);
   font-size: 0.84rem;
 }
 .terminal-output {
@@ -588,9 +588,9 @@ footer {
   gap: 1.1rem;
 }
 .entry {
-  border: 1px solid rgba(181, 169, 222, 0.24);
+  border: 1px solid var(--border);
   border-radius: 12px;
-  background: rgba(45, 41, 62, 0.9);
+  background: rgba(28,24,39,0.92);
   padding: 1.05rem 1.15rem;
   position: relative;
 }
@@ -601,22 +601,22 @@ footer {
   top: 10px;
   bottom: 10px;
   width: 2px;
-  background: linear-gradient(180deg, rgba(181, 169, 222, 0.8), rgba(61, 59, 79, 0.5));
+  background: linear-gradient(180deg, rgba(200,184,232,0.72), rgba(175,158,205,0.4));
   border-radius: 2px;
 }
 .entry.command {
-  color: #d7cefb;
+  color: var(--lilac-bright);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   padding-left: 1.35rem;
 }
 .entry.output h3 {
-  color: #d8ceff;
+  color: var(--lilac-bright);
   margin-bottom: 0.62rem;
   font-size: 1.04rem;
 }
 .entry.output p,
 .entry.output li {
-  color: #f0ecff;
+  color: var(--gray-light);
   font-size: 0.95rem;
   line-height: 1.7;
 }
@@ -630,7 +630,7 @@ footer {
   font-size: 0.8rem !important;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #c7bddf !important;
+  color: var(--gray) !important;
 }
 .output-stack {
   display: grid;
@@ -666,12 +666,12 @@ footer {
   color: #d4cbef;
 }
 .chip {
-  border: 1px solid rgba(181, 169, 222, 0.4);
+  border: 1px solid rgba(175, 158, 205, 0.35);
   border-radius: 999px;
   padding: 0.22rem 0.62rem;
   font-size: 0.76rem;
-  color: #f0ebff;
-  background: rgba(181, 169, 222, 0.15);
+  color: var(--gray-light);
+  background: var(--lilac-dim);
 }
 .inline-command {
   appearance: none;
@@ -679,8 +679,8 @@ footer {
   font-weight: 600;
 }
 .inline-command:hover {
-  background: rgba(181, 169, 222, 0.26);
-  border-color: rgba(181, 169, 222, 0.62);
+  background: rgba(175, 158, 205, 0.28);
+  border-color: rgba(175, 158, 205, 0.58);
 }
 .project-list {
   list-style: none;
@@ -827,7 +827,7 @@ footer {
   color: #eee8ff;
 }
 .terminal-suggestions {
-  border-top: 1px solid rgba(181, 169, 222, 0.22);
+  border-top: 1px solid var(--border);
   padding: 0.9rem 1.2rem;
   display: flex;
   flex-wrap: wrap;
@@ -837,15 +837,15 @@ footer {
 .quick-chip {
   min-height: 46px;
   border-radius: 10px;
-  border: 1px solid rgba(181, 169, 222, 0.38);
-  background: rgba(181, 169, 222, 0.17);
-  color: #f2eeff;
+  border: 1px solid rgba(175, 158, 205, 0.38);
+  background: rgba(175, 158, 205, 0.16);
+  color: var(--gray-light);
   padding: 0 0.85rem;
   cursor: pointer;
   font-weight: 600;
 }
 .terminal-input-row {
-  border-top: 1px solid rgba(181, 169, 222, 0.22);
+  border-top: 1px solid var(--border);
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 0.75rem;
@@ -853,7 +853,7 @@ footer {
   padding: 0.95rem 1.2rem;
 }
 .prompt-label {
-  color: #d8ceff;
+  color: var(--lilac-bright);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   font-size: 0.86rem;
 }
@@ -861,9 +861,9 @@ footer {
   width: 100%;
   min-height: 44px;
   border-radius: 9px;
-  border: 1px solid rgba(181, 169, 222, 0.4);
-  background: rgba(23, 21, 31, 0.9);
-  color: #f6f2ff;
+  border: 1px solid rgba(175, 158, 205, 0.4);
+  background: rgba(15,13,19,0.9);
+  color: var(--white);
   padding: 0 0.75rem;
   font-size: 0.98rem;
 }
@@ -872,15 +872,15 @@ footer {
 .suggestion-btn:focus,
 .quick-chip:focus,
 .boot-skip:focus {
-  outline: 2px solid #b5a9de;
+  outline: 2px solid var(--lilac-bright);
   outline-offset: 2px;
 }
 .terminal-run {
   min-height: 44px;
   border-radius: 9px;
-  border: 1px solid rgba(181, 169, 222, 0.45);
-  background: rgba(61, 59, 79, 0.55);
-  color: #f0ebff;
+  border: 1px solid rgba(175, 158, 205, 0.45);
+  background: rgba(175, 158, 205, 0.24);
+  color: var(--white);
   padding: 0 0.9rem;
   font-weight: 700;
   cursor: pointer;
@@ -888,7 +888,7 @@ footer {
 .entry.command.typing::after {
   content: '▋';
   margin-left: 0.2rem;
-  color: #b5a9de;
+  color: var(--lilac-bright);
   animation: cursorBlink 0.7s steps(1) infinite;
 }
 @keyframes cursorBlink {
