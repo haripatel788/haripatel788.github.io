@@ -731,6 +731,68 @@ footer {
   color: #f2eeff;
   background: rgba(31, 28, 43, 0.65);
 }
+.secret-shell {
+  border: 1px solid rgba(32, 255, 126, 0.3);
+  border-radius: 12px;
+  padding: 0.75rem;
+  background: rgba(8, 22, 14, 0.55);
+}
+.secret-token-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.secret-token {
+  font-size: 0.74rem;
+  border: 1px solid rgba(150, 255, 190, 0.38);
+  border-radius: 999px;
+  padding: 0.2rem 0.56rem;
+}
+.secret-token.token-ok {
+  color: #bfffd5;
+  background: rgba(42, 148, 84, 0.35);
+}
+.secret-token.token-miss {
+  color: #d4e6da;
+  background: rgba(39, 58, 48, 0.36);
+}
+.secret-log-list {
+  margin-left: 1rem !important;
+}
+.sev {
+  display: inline-block;
+  font-size: 0.68rem;
+  border-radius: 999px;
+  padding: 0.08rem 0.42rem;
+  margin-right: 0.32rem;
+}
+.sev.high { background: rgba(255, 110, 110, 0.28); color: #ffd0d0; }
+.sev.med { background: rgba(255, 209, 117, 0.25); color: #ffe9be; }
+.sev.low { background: rgba(123, 255, 173, 0.2); color: #d7ffe7; }
+.game-shell {
+  gap: 0.75rem;
+}
+.game-controls {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.4rem;
+}
+#snakeCanvas {
+  width: min(100%, 320px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(32, 255, 126, 0.35);
+  border-radius: 8px;
+  image-rendering: pixelated;
+  background: #03100a;
+}
+.typing-target {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  color: #b9ffd2 !important;
+  letter-spacing: 0.03em;
+}
+.typing-input {
+  max-width: 560px;
+}
 .resume-live-frame {
   width: 100%;
   border: 1px solid rgba(181, 169, 222, 0.32);
@@ -881,6 +943,9 @@ footer {
     font-size: 0.76rem;
     min-height: 48px;
     padding: 0;
+  }
+  .game-controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .resume-live-frame iframe {
     height: min(52vh, 420px);

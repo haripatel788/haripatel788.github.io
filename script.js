@@ -19,6 +19,17 @@ const commandTransitions = {};
 let secretModeActive = false;
 let secretSessionCounter = 0;
 let activeSecretSessionId = null;
+let snakeState = null;
+let typingState = null;
+
+const secretState = {
+  tokenA: false,
+  tokenB: false,
+  tokenC: false,
+  unlocked: false,
+  snakeWin: false,
+  typingWin: false,
+};
 
 const getText = (selector) => {
   const el = source ? source.querySelector(selector) : null;
@@ -65,6 +76,7 @@ const stackCategories = source
 
 const visibleCommandList = ['help', 'about', 'stack', 'projects', 'resume', 'resume live', 'contact', 'clear', 'history', 'home', 'exit'];
 const secretCommand = 'harisupersecretcommand';
+const secretOnlyCommands = ['scan', 'decrypt', 'trace', 'logs', 'breaches', 'unlock', 'snake', 'typing-hack', 'purge'];
 
 const createEntry = (type, html) => {
   const el = document.createElement('article');
@@ -76,6 +88,32 @@ const createEntry = (type, html) => {
   terminalOutput.appendChild(el);
   terminalOutput.scrollTop = terminalOutput.scrollHeight;
   return el;
+};
+
+const resetSecretProgress = () => {
+  secretState.tokenA = false;
+  secretState.tokenB = false;
+  secretState.tokenC = false;
+  secretState.unlocked = false;
+  secretState.snakeWin = false;
+  secretState.typingWin = false;
+};
+
+const stopMiniGames = () => {
+  if (snakeState?.timer) clearInterval(snakeState.timer);
+  if (typingState?.timer) clearInterval(typingState.timer);
+  snakeState = null;
+  typingState = null;
+};
+
+const tokenMarkup = () => {
+  const status = (ok) => (ok ? 'token-ok' : 'token-miss');
+  return `<div class="secret-token-row">
+    <span class="secret-token ${status(secretState.tokenA)}">A: Scan</span>
+    <span class="secret-token ${status(secretState.tokenB)}">B: Decrypt</span>
+    <span class="secret-token ${status(secretState.tokenC)}">C: Trace</span>
+    <span class="secret-token ${status(secretState.unlocked)}">Unlock</span>
+  </div>`;
 };
 
 const typeText = (el, text, speed = 18) => {
@@ -305,6 +343,253 @@ const renderHistory = () => {
   renderSuggestions(['help']);
 };
 
+const secretUnknown = (cmd) => {
+  createEntry(
+    'output',
+    `<div class="output-shell secret-shell">
+      <h3>Unknown Secret Command</h3>
+      <p><strong>${cmd}</strong> is not recognized in hidden mode.</p>
+      ${tokenMarkup()}
+    </div>`
+  );
+  renderSuggestions(['scan', 'decrypt', 'trace', 'unlock', 'logs']);
+};
+
+const secretScan = () => {
+  secretState.tokenA = true;
+  createEntry(
+    'output',
+    `<div class="output-shell secret-shell">
+      <h3>Recon Scan Complete</h3>
+      <p>Discovered active nodes and captured entry token A.</p>
+      ${tokenMarkup()}
+    </div>`
+  );
+  renderSuggestions(['decrypt', 'logs', 'breaches']);
+};
+
+const secretDecrypt = () => {
+  if (!secretState.tokenA) {
+    createEntry('output', '<div class="output-shell secret-shell"><h3>Decrypt Blocked</h3><p>Missing prerequisite token A. Run <strong>scan</strong> first.</p></div>');
+    renderSuggestions(['scan', 'logs']);
+    return;
+  }
+  secretState.tokenB = true;
+  createEntry(
+    'output',
+    `<div class="output-shell secret-shell">
+      <h3>Cipher Broken</h3>
+      <p>Payload decoded. Token B secured.</p>
+      ${tokenMarkup()}
+    </div>`
+  );
+  renderSuggestions(['trace', 'breaches', 'typing-hack']);
+};
+
+const secretTrace = () => {
+  if (!secretState.tokenB) {
+    createEntry('output', '<div class="output-shell secret-shell"><h3>Trace Blocked</h3><p>Token B required. Run <strong>decrypt</strong> first.</p></div>');
+    renderSuggestions(['decrypt', 'logs']);
+    return;
+  }
+  secretState.tokenC = true;
+  createEntry(
+    'output',
+    `<div class="output-shell secret-shell">
+      <h3>Trace Resolved</h3>
+      <p>Route mapping complete. Token C acquired.</p>
+      ${tokenMarkup()}
+    </div>`
+  );
+  renderSuggestions(['unlock', 'snake', 'logs']);
+};
+
+const secretLogs = () => {
+  createEntry(
+    'output',
+    `<div class="output-shell secret-shell">
+      <h3>Secure Logs</h3>
+      <ul class="secret-log-list">
+        <li>[17:42:13] NODE/ALPHA -> warm</li>
+        <li>[17:42:16] TOKEN_A status: ${secretState.tokenA ? 'active' : 'missing'}</li>
+        <li>[17:42:18] TOKEN_B status: ${secretState.tokenB ? 'active' : 'missing'}</li>
+        <li>[17:42:20] TOKEN_C status: ${secretState.tokenC ? 'active' : 'missing'}</li>
+      </ul>
+      ${tokenMarkup()}
+    </div>`
+  );
+  renderSuggestions(['scan', 'decrypt', 'trace', 'unlock']);
+};
+
+const secretBreaches = () => {
+  createEntry(
+    'output',
+    `<div class="output-shell secret-shell">
+      <h3>Breach Intel</h3>
+      <ul class="secret-log-list">
+        <li><span class="sev high">HIGH</span> API relay anomaly (patched)</li>
+        <li><span class="sev med">MED</span> Session replay attempt (blocked)</li>
+        <li><span class="sev low">LOW</span> Archive index mismatch (resolved)</li>
+      </ul>
+    </div>`
+  );
+  renderSuggestions(['trace', 'unlock', 'logs']);
+};
+
+const secretUnlock = () => {
+  const completedTokens = secretState.tokenA && secretState.tokenB && secretState.tokenC;
+  if (!completedTokens) {
+    createEntry('output', `<div class="output-shell secret-shell"><h3>Unlock Denied</h3><p>Sequence incomplete. Required: scan -> decrypt -> trace.</p>${tokenMarkup()}</div>`);
+    renderSuggestions(['scan', 'decrypt', 'trace']);
+    return;
+  }
+  secretState.unlocked = true;
+  const bonusCount = Number(secretState.snakeWin) + Number(secretState.typingWin);
+  createEntry(
+    'output',
+    `<div class="output-shell secret-shell">
+      <h3>Classified Profile Unlocked</h3>
+      <p>Mission complete. You found the hidden layer of the portfolio terminal.</p>
+      <p>${bonusCount ? `Bonus intel awarded from mini-games: ${bonusCount}` : 'No mini-game bonuses detected yet.'}</p>
+      ${tokenMarkup()}
+    </div>`
+  );
+  renderSuggestions(['snake', 'typing-hack', 'purge', 'exit']);
+};
+
+const secretPurge = () => {
+  const sessionId = activeSecretSessionId;
+  if (sessionId !== null) {
+    terminalOutput.querySelectorAll(`[data-secret-session="${sessionId}"]`).forEach((entry) => entry.remove());
+  }
+  createEntry('output', '<div class="output-shell secret-shell"><h3>Session Purged</h3><p>Secret output wiped for current session.</p></div>');
+  renderSuggestions(['scan', 'decrypt', 'trace', 'unlock']);
+};
+
+const startSnakeGame = () => {
+  stopMiniGames();
+  createEntry(
+    'output',
+    `<div class="output-shell secret-shell game-shell">
+      <h3>Snake Protocol</h3>
+      <p>Reach score 5 to earn bonus intel.</p>
+      <canvas id="snakeCanvas" width="320" height="320"></canvas>
+      <div class="game-controls">
+        <button class="suggestion-btn" data-game-dir="up">up</button>
+        <button class="suggestion-btn" data-game-dir="left">left</button>
+        <button class="suggestion-btn" data-game-dir="down">down</button>
+        <button class="suggestion-btn" data-game-dir="right">right</button>
+      </div>
+      <p id="snakeStatus">Score: 0</p>
+    </div>`
+  );
+  renderSuggestions(['typing-hack', 'unlock', 'purge', 'exit']);
+
+  const canvas = document.getElementById('snakeCanvas');
+  const statusEl = document.getElementById('snakeStatus');
+  if (!canvas || !statusEl) return;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+  const size = 16;
+  const cells = canvas.width / size;
+  snakeState = {
+    snake: [{ x: 5, y: 5 }],
+    dir: { x: 1, y: 0 },
+    food: { x: 10, y: 10 },
+    score: 0,
+    timer: null,
+  };
+  const placeFood = () => {
+    snakeState.food = {
+      x: Math.floor(Math.random() * cells),
+      y: Math.floor(Math.random() * cells),
+    };
+  };
+  snakeState.timer = setInterval(() => {
+    const head = { ...snakeState.snake[0] };
+    head.x = (head.x + snakeState.dir.x + cells) % cells;
+    head.y = (head.y + snakeState.dir.y + cells) % cells;
+    if (snakeState.snake.some((seg) => seg.x === head.x && seg.y === head.y)) {
+      snakeState.snake = [{ x: 5, y: 5 }];
+      snakeState.dir = { x: 1, y: 0 };
+      snakeState.score = 0;
+      placeFood();
+    } else {
+      snakeState.snake.unshift(head);
+      if (head.x === snakeState.food.x && head.y === snakeState.food.y) {
+        snakeState.score += 1;
+        placeFood();
+      } else {
+        snakeState.snake.pop();
+      }
+    }
+    ctx.fillStyle = '#03100a';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#2fff82';
+    snakeState.snake.forEach((seg) => ctx.fillRect(seg.x * size, seg.y * size, size - 1, size - 1));
+    ctx.fillStyle = '#b5ffcf';
+    ctx.fillRect(snakeState.food.x * size, snakeState.food.y * size, size - 1, size - 1);
+    statusEl.textContent = `Score: ${snakeState.score}`;
+    if (snakeState.score >= 5 && !secretState.snakeWin) {
+      secretState.snakeWin = true;
+      statusEl.textContent = 'Score: 5 — bonus intel unlocked.';
+      renderSuggestions(['unlock', 'typing-hack', 'purge', 'exit']);
+    }
+  }, 130);
+};
+
+const startTypingHackGame = () => {
+  stopMiniGames();
+  const phrases = ['secure channel engaged', 'decrypting payload stream', 'trace route complete'];
+  const phrase = phrases[Math.floor(Math.random() * phrases.length)];
+  createEntry(
+    'output',
+    `<div class="output-shell secret-shell game-shell">
+      <h3>Typing Hack</h3>
+      <p>Type this exactly before timer runs out:</p>
+      <p class="typing-target">${phrase}</p>
+      <input class="terminal-input typing-input" id="typingHackInput" placeholder="type phrase..." />
+      <p id="typingHackStatus">Time left: 15s</p>
+    </div>`
+  );
+  renderSuggestions(['snake', 'unlock', 'purge', 'exit']);
+  const input = document.getElementById('typingHackInput');
+  const statusEl = document.getElementById('typingHackStatus');
+  if (!input || !statusEl) return;
+  let timeLeft = 15;
+  input.focus();
+  typingState = {
+    timer: setInterval(() => {
+      timeLeft -= 1;
+      statusEl.textContent = `Time left: ${timeLeft}s`;
+      if (timeLeft <= 0) {
+        clearInterval(typingState.timer);
+        statusEl.textContent = 'Challenge failed. Try typing-hack again.';
+      }
+    }, 1000),
+  };
+  input.addEventListener('input', () => {
+    if (input.value === phrase) {
+      clearInterval(typingState.timer);
+      statusEl.textContent = 'Challenge passed. Bonus intel unlocked.';
+      secretState.typingWin = true;
+      renderSuggestions(['unlock', 'snake', 'purge', 'exit']);
+    }
+  });
+};
+
+const secretCommandHandlers = {
+  scan: secretScan,
+  decrypt: secretDecrypt,
+  trace: secretTrace,
+  logs: secretLogs,
+  breaches: secretBreaches,
+  unlock: secretUnlock,
+  purge: secretPurge,
+  snake: startSnakeGame,
+  'typing-hack': startTypingHackGame,
+};
+
 const enterAdminMode = () => {
   if (secretModeActive && document.body.classList.contains('admin-mode')) {
     createEntry('output', '<h3>Secret Mode Active</h3><p>You are already in the hidden terminal mode. Type <strong>exit</strong> to leave.</p>');
@@ -314,15 +599,18 @@ const enterAdminMode = () => {
   secretSessionCounter += 1;
   activeSecretSessionId = secretSessionCounter;
   secretModeActive = true;
+  resetSecretProgress();
+  stopMiniGames();
   document.body.classList.add('admin-mode');
   createEntry(
     'output',
     '<h3>Admin Access Granted</h3><p>Welcome to stealth terminal mode. Signal elevated. Type <strong>exit</strong> to return.</p>'
   );
-  renderSuggestions(['projects', 'history', 'exit']);
+  renderSuggestions(['scan', 'decrypt', 'trace', 'logs', 'unlock', 'exit']);
 };
 
 const exitAdminMode = () => {
+  stopMiniGames();
   const sessionId = activeSecretSessionId;
   if (sessionId !== null) {
     terminalOutput.querySelectorAll(`[data-secret-session="${sessionId}"]`).forEach((entry) => entry.remove());
@@ -396,6 +684,14 @@ const runCommand = async (raw) => {
   await typeText(commandEntry, `hari@portfolio:~$ ${normalized}`);
   history.push(normalized);
   historyIndex = history.length;
+  if (secretModeActive && secretCommandHandlers[normalized]) {
+    secretCommandHandlers[normalized]();
+    return;
+  }
+  if (secretModeActive && secretOnlyCommands.includes(normalized)) {
+    secretUnknown(normalized);
+    return;
+  }
   if (commandHandlers[base]) {
     commandFrequency[base] = (commandFrequency[base] || 0) + 1;
     if (!commandTransitions[lastExecutedBase]) commandTransitions[lastExecutedBase] = {};
@@ -481,8 +777,25 @@ terminalSuggestions.addEventListener('click', (e) => {
 
 terminalOutput.addEventListener('click', (e) => {
   const btn = e.target.closest('button[data-command]');
-  if (!btn || !bootDone) return;
-  enqueueCommand(btn.dataset.command);
+  if (btn && bootDone) {
+    enqueueCommand(btn.dataset.command);
+    return;
+  }
+  const dirBtn = e.target.closest('button[data-game-dir]');
+  if (!dirBtn || !snakeState) return;
+  const dir = dirBtn.dataset.gameDir;
+  if (dir === 'up' && snakeState.dir.y !== 1) snakeState.dir = { x: 0, y: -1 };
+  if (dir === 'down' && snakeState.dir.y !== -1) snakeState.dir = { x: 0, y: 1 };
+  if (dir === 'left' && snakeState.dir.x !== 1) snakeState.dir = { x: -1, y: 0 };
+  if (dir === 'right' && snakeState.dir.x !== -1) snakeState.dir = { x: 1, y: 0 };
+});
+
+document.addEventListener('keydown', (e) => {
+  if (!snakeState) return;
+  if (e.key === 'ArrowUp' && snakeState.dir.y !== 1) snakeState.dir = { x: 0, y: -1 };
+  if (e.key === 'ArrowDown' && snakeState.dir.y !== -1) snakeState.dir = { x: 0, y: 1 };
+  if (e.key === 'ArrowLeft' && snakeState.dir.x !== 1) snakeState.dir = { x: -1, y: 0 };
+  if (e.key === 'ArrowRight' && snakeState.dir.x !== -1) snakeState.dir = { x: 1, y: 0 };
 });
 
 quickChips.forEach((chip) => {
