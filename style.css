@@ -736,6 +736,8 @@ footer {
     border-right: none;
   }
   .terminal-hint { display: none; }
+  .terminal-lights { display: none; }
+  .terminal-topbar { padding-left: 4.6rem; }
   .terminal-input-row {
     position: sticky;
     bottom: 3.8rem;
