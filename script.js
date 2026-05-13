@@ -10,9 +10,9 @@ const emailBtn = document.getElementById('emailBtn');
 const emailBtnText = document.getElementById('emailBtnText');
 const pageProgress = document.getElementById('pageProgress');
 emailBtn.addEventListener('click', () => {
-  navigator.clipboard.writeText('haripatel788@gmail.com').then(() => {
+  navigator.clipboard.writeText('haririteshpatel@gmail.com').then(() => {
     emailBtnText.textContent = 'Copied!'; emailBtn.classList.add('copied');
-    setTimeout(() => { emailBtnText.textContent = 'haripatel788@gmail.com'; emailBtn.classList.remove('copied'); }, 2000);
+    setTimeout(() => { emailBtnText.textContent = 'haririteshpatel@gmail.com'; emailBtn.classList.remove('copied'); }, 2000);
   });
 });
 

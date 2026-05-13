@@ -358,6 +358,134 @@ footer { padding: 2rem clamp(1.5rem,8vw,6rem); border-top: 1px solid var(--borde
 .stagger-parent.visible .stagger-child:nth-child(10) { opacity:1; transform:none; transition-delay:.5s;  }
 .stagger-parent.visible .stagger-child:nth-child(n+11){ opacity:1; transform:none; transition-delay:.55s; }
 
+/* ── Novus Section ── */
+#novus { max-width: 1200px; margin: 0 auto; }
+.novus-inner { width: 100%; }
+
+.novus-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.novus-text p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--gray-light);
+  margin-bottom: 1.25rem;
+}
+.novus-text p strong { color: var(--white); font-weight: 500; }
+.novus-chips { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
+
+.novus-card-wrap { position: relative; }
+.novus-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-hover);
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+.novus-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+.novus-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+}
+.novus-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.novus-label {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+.novus-stage {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray);
+  white-space: nowrap;
+}
+.novus-tagline {
+  font-size: 0.95rem;
+  color: var(--gray-light);
+  line-height: 1.55;
+  font-style: italic;
+}
+.novus-mission {}
+.novus-mission-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.novus-mission-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.novus-mission-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.novus-mission-list li {
+  font-size: 0.86rem;
+  color: var(--gray-light);
+  line-height: 1.6;
+  padding-left: 1rem;
+  position: relative;
+}
+.novus-mission-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+.novus-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gray-light);
+  transition: color 0.2s ease;
+  margin-top: auto;
+}
+.novus-cta svg { transition: transform 0.2s ease; }
+.novus-cta:hover { color: var(--accent); }
+.novus-cta:hover svg { transform: translate(2px, -2px); }
+
+@media (max-width: 900px) {
+  .novus-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
 @media (max-width: 900px) {
   .about-grid { grid-template-columns:1fr; gap:3rem; }
   .about-photo-wrap { order:-1; }
