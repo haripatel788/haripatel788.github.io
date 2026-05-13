@@ -41,16 +41,17 @@ Civic platform built for Codefest 2026 that rewrites generic 311 reports, detect
 - Engineered a predictive dead zone detection system combining FCC Broadband Map data, U.S. Census demographic signals,
     and live Firebase complaint density into a weighted risk scoring algorithm on an interactive Leaflet map.
 
-### Market Pulse | Python, Scikit-Learn, FinBERT, FastAPI, TailwindCSS, Gemini API, NewsAPI Jan. 2026 – Present
+### MarketPulse | Python, FastAPI, scikit-learn, NewsAPI, Groq, Supabase Jan. 2026 – Present
 
 ```
-Stock prediction pairing a Random Forest model with live NLP sentiment analysis to forecast price direction up to 30 days out.
+Stock forecasts up to 30 days: Random Forest on engineered Stooq prices with NewsAPI + Groq sentiment and optional Supabase auth.
 ```
-- Trained a 300-tree Random Forest Regressor on 1,200+ daily records across 27 engineered features – lagged closes, volume
-    shifts, moving averages – then layered in FinBERT sentiment scores from a Kaggle financial news dataset as an auxiliary
-    signal.
-- Pulled live headlines via NewsAPI, scored them with Gemini API at inference time using LLM integration, and deployed a
-    financial dashboard on Render with a Stooq/Yahoo Finance fallback for data resilience.
+- Trained a 300-tree RandomForestRegressor on 1,200+ daily rows and 27 engineered OHLCV features (returns, MAs, lags,
+    volatility, intraday range) with Stooq as primary market data and Yahoo Finance chart fallback.
+- Fetched live headlines via NewsAPI, scored sentiment and relevance in parallel through Groq’s chat API, aggregated into a
+    relevance-weighted signal, and blended it into the multi-day forecast rollout (up to 30 trading days).
+- Shipped a FastAPI + static UI stack on Render with SHA-256 keyed in-memory rate limits, security middleware, pytest coverage
+    for predict/sentiment paths, and Supabase-backed optional accounts, tiers, and forecast history.
 
 ### PrepGO | Next.js, TypeScript, React, PostgreSQL, Neon, TailwindCSS Aug. 2024 – Mar. 2026
 
