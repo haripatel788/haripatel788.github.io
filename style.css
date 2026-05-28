@@ -565,8 +565,95 @@ footer { padding: 2rem clamp(1.5rem,8vw,6rem); border-top: 1px solid var(--borde
 .novus-cta:hover { color: var(--accent); }
 .novus-cta:hover svg { transform: translate(2px, -2px); }
 
+.novus-form-cta {
+  margin-top: 3rem;
+  padding: 2rem 2.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+}
+.novus-form-cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--lilac), transparent);
+  opacity: 0.6;
+}
+.novus-form-cta:hover {
+  border-color: var(--border-hover);
+}
+.novus-form-cta-text { flex: 1; min-width: 0; }
+.novus-form-cta-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+.novus-form-cta-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+  line-height: 1.15;
+}
+.novus-form-cta-title em {
+  font-style: italic;
+  color: var(--lilac-bright);
+}
+.novus-form-cta-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--gray-light);
+  max-width: 56ch;
+}
+.novus-form-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.4rem;
+  border-radius: 999px;
+  background: var(--lilac);
+  color: var(--bg);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  flex-shrink: 0;
+}
+.novus-form-cta-btn svg { transition: transform 0.2s ease; }
+.novus-form-cta-btn:hover {
+  background: var(--lilac-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(175, 158, 205, 0.25);
+}
+.novus-form-cta-btn:hover svg { transform: translate(2px, -2px); }
+.novus-form-cta-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 @media (max-width: 900px) {
   .novus-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .novus-form-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.75rem;
+    gap: 1.5rem;
+  }
+  .novus-form-cta-title { font-size: 1.4rem; }
+  .novus-form-cta-btn { width: 100%; justify-content: center; }
 }
 
 @media (max-width: 900px) {
