@@ -4,16 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hari Patel — CS Student</title>
+  <meta name="description" content="Hari Patel - Computer Science student at Drexel's Pennoni Honors College building full-stack apps and machine learning systems. Co-founder of Novus.">
+  <link rel="canonical" href="https://haripatel788.github.io/">
   <link rel="icon" type="image/png" href="2.png">
   <meta property="og:title" content="Hari Patel — CS Student & Developer">
-  <meta property="og:description" content="Building full-stack apps and ML pipelines. Drexel CS '30.">
+  <meta property="og:description" content="Building full-stack apps and ML systems. Drexel CS '30.">
   <meta property="og:image" content="https://haripatel788.github.io/2.png">
   <meta property="og:url" content="https://haripatel788.github.io">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
@@ -34,7 +36,7 @@
     <div class="nav-actions">
       <a href="#contact" class="nav-cta">Get in touch</a>
     </div>
-    <button class="ham-btn" id="hamBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <button class="ham-btn" id="hamBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
@@ -46,14 +48,14 @@
     <a href="#contact">Contact</a>
   </div>
 
+  <main>
   <section id="hero">
     <div class="hero-inner">
       <div class="hero-text">
         <p class="hero-eyebrow">Building AI-powered Tools · Drexel CS '30</p>
         <h1 class="hero-name">Hari<br><em>Patel.</em></h1>
         <p class="hero-title">
-          Studying <strong>Computer Science</strong> at Drexel's Pennoni Honors College.<br>
-          Pursuing a major in <strong>Computer Science</strong> and planning on adding a second major in <strong>Machine Learning</strong>.<br>
+          Studying <strong>Computer Science</strong> at Drexel's Pennoni Honors College, with a minor in <strong>Artificial Intelligence &amp; Machine Learning</strong>.<br>
           I build fast, thoughtful web applications - from backend APIs to polished UIs.
         </p>
         <div class="hero-ctas">
@@ -63,7 +65,7 @@
       </div>
       <div class="hero-photo-wrap">
         <div class="hero-photo">
-          <img src="headshot.png" alt="Hari Patel headshot" />
+          <img src="headshot.jpg" alt="Hari Patel headshot" />
         </div>
       </div>
     </div>
@@ -75,19 +77,20 @@
   <section id="about">
     <div class="about-grid">
       <div class="about-photo-wrap reveal">
-        <img src="2.png" alt="Hari Patel illustration" />
+        <img src="2.png" alt="Hari Patel illustration" loading="lazy" />
       </div>
       <div class="about-text">
         <p class="section-label reveal">About me</p>
         <h2 class="section-title reveal reveal-delay-1">Building things that<br><em>actually work.</em></h2>
-        <p class="reveal reveal-delay-2">Hey - I'm Hari. I'm a <strong>Computer Science student</strong> at Drexel University's Pennoni Honors College, planning on pursuing a second major in <strong>Machine Learning</strong>.</p>
-        <p class="reveal reveal-delay-3">I care about the full picture - from designing Postgres schemas and hardening API security to shipping polished UIs that real users interact with. Most of my projects went from zero to deployed with actual users.</p>
+        <p class="reveal reveal-delay-2">Hey - I'm Hari. I'm a <strong>Computer Science student</strong> at Drexel University's Pennoni Honors College, minoring in <strong>Artificial Intelligence &amp; Machine Learning</strong>, and an <strong>undergraduate researcher</strong> working with Dr. Arvin Ebrahimkhanlou.</p>
+        <p class="reveal reveal-delay-3">I care about the full picture - from designing Postgres schemas and hardening API security to testing models honestly and shipping polished UIs that real users interact with. Most of my projects went from zero to deployed with actual users.</p>
         <div class="about-chips stagger-parent reveal reveal-delay-4">
           <span class="chip stagger-child">Drexel University</span>
           <span class="chip stagger-child">Pennoni Honors College</span>
           <span class="chip stagger-child">Computer Science</span>
-          <span class="chip stagger-child">Machine Learning</span>
-          <span class="chip stagger-child">Backend Dev</span>
+          <span class="chip stagger-child">AI &amp; ML Minor</span>
+          <span class="chip stagger-child">Dean's List</span>
+          <span class="chip stagger-child">Presidential Scholar</span>
           <span class="chip stagger-child">Open to opportunities</span>
         </div>
       </div>
@@ -116,34 +119,37 @@
           <span class="tech-pill featured stagger-child">Next.js</span>
           <span class="tech-pill featured stagger-child">React</span>
           <span class="tech-pill featured stagger-child">FastAPI</span>
+          <span class="tech-pill stagger-child">Express.js</span>
           <span class="tech-pill stagger-child">Tailwind CSS</span>
-          <span class="tech-pill stagger-child">Bootstrap</span>
           <span class="tech-pill stagger-child">Pandas</span>
+          <span class="tech-pill stagger-child">NumPy</span>
           <span class="tech-pill stagger-child">Scikit-learn</span>
           <span class="tech-pill stagger-child">Prisma</span>
+          <span class="tech-pill stagger-child">Bootstrap</span>
         </div>
       </div>
       <div class="tech-category reveal reveal-delay-3">
         <p class="tech-category-label">Databases & infra</p>
         <div class="tech-pills stagger-parent visible">
           <span class="tech-pill featured stagger-child">PostgreSQL</span>
+          <span class="tech-pill featured stagger-child">Supabase</span>
           <span class="tech-pill featured stagger-child">Firebase</span>
           <span class="tech-pill stagger-child">Neon</span>
-          <span class="tech-pill stagger-child">AWS</span>
+          <span class="tech-pill stagger-child">AWS (EC2, RDS)</span>
           <span class="tech-pill stagger-child">Vercel</span>
+          <span class="tech-pill stagger-child">Clerk</span>
           <span class="tech-pill stagger-child">Git</span>
           <span class="tech-pill stagger-child">GitHub</span>
-          <span class="tech-pill stagger-child">Google Apps Script</span>
+          <span class="tech-pill stagger-child">pytest</span>
         </div>
       </div>
       <div class="tech-category reveal reveal-delay-3">
-        <p class="tech-category-label">Tools & creative</p>
+        <p class="tech-category-label">Creative</p>
         <div class="tech-pills stagger-parent visible">
           <span class="tech-pill stagger-child">Photoshop</span>
           <span class="tech-pill stagger-child">Premiere Pro</span>
           <span class="tech-pill stagger-child">After Effects</span>
           <span class="tech-pill stagger-child">Adobe Audition</span>
-          <span class="tech-pill stagger-child">Clerk (Auth)</span>
         </div>
       </div>
     </div>
@@ -161,44 +167,47 @@
 
       <div class="project-card has-preview bento-r1c1 reveal">
         <p class="project-number">01 — Featured</p>
-        <img class="project-preview" src="marketpulse-screenshot.png" alt="MarketPulse project preview">
+        <img class="project-preview" src="marketpulse-screenshot.jpg" alt="MarketPulse forecast for AAPL showing 80% and 95% price ranges" loading="lazy">
         <h3 class="project-name">MarketPulse</h3>
-        <p class="project-desc">Stock forecasts up to 30 days: a 300-tree scikit-learn Random Forest on 27 engineered features from Stooq prices (Yahoo Finance fallback), plus live NewsAPI headlines scored with Groq into a relevance-weighted sentiment blend. FastAPI backend with in-memory rate limits; Supabase for optional auth, tiers, and forecast history.</p>
+        <p class="project-desc">Stock volatility forecasting API. Per-stock Heterogeneous Autoregressive (HAR) models fit on 10 years of price history give the expected daily move and 80%/95% price ranges for up to 30 trading days. Backtested on 112,700 predictions across 490 S&amp;P 500 stocks: it beat an EWMA baseline on 86% of 474 held-out stocks at 1-, 5-, and 20-day horizons, and its 80% ranges held the close 81% of the time. Supabase JWT auth, tiered access, sliding-window rate limits, and 27 pytest integration tests.</p>
         <div class="project-footer">
-          <span class="project-tag">Python · FastAPI · scikit-learn · NewsAPI · Groq · Supabase</span>
-          <a href="https://marketpulse-ba4x.onrender.com" target="_blank" class="project-link">Live Site <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <span class="project-tag">Python · FastAPI · Pandas · Supabase</span>
+          <div class="project-links">
+            <a href="https://github.com/haripatel788/MarketPulse" target="_blank" rel="noopener noreferrer" class="project-link">Repo <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="https://marketpulse-ba4x.onrender.com" target="_blank" rel="noopener noreferrer" class="project-link">Live Site <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
         </div>
       </div>
 
       <div class="project-card bento-r1c2 reveal reveal-delay-1">
-        <p class="project-number">03</p>
-        <h3 class="project-name">PrepGO</h3>
-        <p class="project-desc">SAT prep platform serving 30+ active users across 250+ reading and math questions, built and deployed with a normalized PostgreSQL schema and JWT security.</p>
+        <p class="project-number">02</p>
+        <h3 class="project-name">PrepGo</h3>
+        <p class="project-desc">SAT prep platform serving 30 active users and 300+ completed practice questions. Clerk authentication, serverless PostgreSQL on Neon, and a per-session rate limiter that stopped connection-pool crashes under peak load.</p>
         <div class="project-footer">
-          <span class="project-tag">Next.js · TypeScript</span>
-          <a href="https://prep-go.vercel.app" target="_blank" class="project-link">Live Site <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <span class="project-tag">Next.js · TypeScript · Neon · Clerk</span>
+          <a href="https://prep-go.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link">Live Site <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
 
       <div class="project-card bento-r2c1 reveal reveal-delay-1">
-        <p class="project-number">07</p>
+        <p class="project-number">03</p>
         <h3 class="project-name">Session</h3>
         <p class="project-desc">Productivity web app with Clerk auth, Prisma ORM, server-side rendering, and protected routes. Focused on performance and a clean, distraction-free experience.</p>
         <div class="project-footer">
           <span class="project-tag">Next.js · Prisma</span>
-          <a href="https://sessionapp.vercel.app/" target="_blank" class="project-link">Live Site <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="https://sessionapp.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">Live Site <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
       <div class="project-card has-preview bento-r2c2 reveal reveal-delay-2">
-        <p class="project-number">02 — Featured</p>
-        <img class="project-preview" src="sixthandmarket-screenshot.png" alt="Sixth and Market project preview">
+        <p class="project-number">04 — Featured</p>
+        <img class="project-preview" src="sixthandmarket-screenshot.jpg" alt="Sixth and Market project preview" loading="lazy">
         <h3 class="project-name">Sixth & Market</h3>
-        <p class="project-desc">Civic platform built for Codefest 2026 that rewrites generic 311 reports, detects duplicate issues, and maps broadband dead zones using predictive risk scoring.</p>
+        <p class="project-desc">Civic analytics platform that placed 9th of 52 teams at Philly Codefest 2026, built in an 11-hour sprint. LLMs behind an Express.js proxy classify Philadelphia 311 tickets, and a Leaflet map cross-references FCC broadband coverage, Census tracts, and complaint data to surface connectivity dead zones.</p>
         <div class="project-footer">
-          <span class="project-tag">React19 · GroqAPI · Leaflet</span>
-          <a href="https://github.com/haripatel788/codefest2026" target="_blank" class="project-link">Repo <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <span class="project-tag">React · TypeScript · Express.js · Groq · Leaflet</span>
+          <a href="https://github.com/haripatel788/codefest2026" target="_blank" rel="noopener noreferrer" class="project-link">Repo <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
@@ -208,8 +217,8 @@
         <h3 class="project-name">CallReminderBot</h3>
         <p class="project-desc">Serverless scheduling bot that automates meeting role assignments via a custom fairness algorithm. Integrates Google Sheets for persistent state and Telegram for real-time notifications.</p>
         <div class="project-footer">
-          <span class="project-tag">Python · Github Actions</span>
-          <a href="https://github.com/haripatel788/weekly-call-reminder" target="_blank" class="project-link">Repo <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <span class="project-tag">Python · GitHub Actions</span>
+          <a href="https://github.com/haripatel788/weekly-call-reminder" target="_blank" rel="noopener noreferrer" class="project-link">Repo <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
@@ -219,17 +228,17 @@
         <p class="project-desc">Community platform for religious education. Firebase Realtime Database handles high-concurrency sync, enabling smooth collaborative experiences for users.</p>
         <div class="project-footer">
           <span class="project-tag">Firebase · JavaScript</span>
-          <a href="https://smaranam.vercel.app/" target="_blank" class="project-link">Live Site <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="https://smaranam.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">Live Site <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
       <div class="project-card bento-r3c3 reveal reveal-delay-4">
-        <p class="project-number">08</p>
+        <p class="project-number">07</p>
         <h3 class="project-name">Java RPG</h3>
         <p class="project-desc">Text-based RPG in Java showcasing OOP principles — inheritance, polymorphism, complex conditional logic, and dynamic user input for an immersive narrative.</p>
         <div class="project-footer">
           <span class="project-tag">Java · OOP</span>
-          <a href="https://codehs.com/sandbox/id/rpg-Cq6Ldt/run" target="_blank" class="project-link">Play <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="https://codehs.com/sandbox/id/rpg-Cq6Ldt/run" target="_blank" rel="noopener noreferrer" class="project-link">Play <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
@@ -240,7 +249,7 @@
 
   <section id="novus">
     <div class="novus-inner">
-      <p class="section-label reveal">Co-Founder · 2025–Present</p>
+      <p class="section-label reveal">Co-Founder · Apr. 2026–Present</p>
       <h2 class="section-title reveal reveal-delay-1">Novus — <em>Fintech Startup.</em></h2>
 
       <div class="novus-grid">
@@ -250,15 +259,15 @@
             I'm co-founding <strong>Novus</strong> with two partners, <a href="https://www.linkedin.com/in/rishabh-teegavarapu/" target="_blank" rel="noopener noreferrer" class="novus-partner-link">Rishabh Teegavarapu</a> and <a href="https://www.linkedin.com/in/anantheshwar-elumalai/" target="_blank" rel="noopener noreferrer" class="novus-partner-link">Anantheshwar Elumalai</a>. The idea came from a real gap: students at non-target schools have no structured way of breaking into high finance with roles like investment banking and private equity. The existing prep resources such as Wall Street Prep, WSO, BIWS, etc. are built for students who already have the network. Novus is built for everyone else.
           </p>
           <p>
-            The product is a <strong>LeetCode-style platform for institutional finance</strong>, with live modeling challenges, school-specific recruiting roadmaps, and an AI coach that pulls from current market conditions. We're starting at Drexel's LeBow College of Business and expanding to institutions in Philadelphia. We've done advisor conversations with people at <strong>Deutsche Bank, JPMorgan, BlackRock, and Vanguard</strong> and are in early validation with students and faculty.
+            Novus is a <strong>B2B platform for structured finance interview prep</strong> that universities run for their students. I architected the multi-tenant backend on Supabase: a <strong>40-table PostgreSQL schema</strong> with Row-Level Security that keeps each institution's data isolated and enforces role-based access. I also built the AI grading pipeline, where <strong>Llama 3.3 70B</strong> scores answers on technical accuracy, risk awareness, and communication, landing within 2 points of expert graders <strong>92.5% of the time</strong>. With 8+ finance industry advisors, including people at <strong>Deutsche Bank, JPMorgan, BlackRock, and Vanguard</strong>, we've written 80+ technical interview questions for the beta, starting at Drexel's LeBow College of Business.
           </p>
           <div class="novus-chips stagger-parent reveal reveal-delay-3">
             <span class="chip stagger-child">Fintech</span>
             <span class="chip stagger-child">EdTech</span>
-            <span class="chip stagger-child">Financial Modeling</span>
+            <span class="chip stagger-child">B2B SaaS</span>
+            <span class="chip stagger-child">Multi-tenant</span>
+            <span class="chip stagger-child">LLM Grading</span>
             <span class="chip stagger-child">Non-Target Recruiting</span>
-            <span class="chip stagger-child">Investment Banking Prep</span>
-            <span class="chip stagger-child">Early Stage</span>
           </div>
         </div>
 
@@ -266,19 +275,19 @@
           <div class="novus-card">
             <div class="novus-card-header">
               <span class="novus-label">Novus</span>
-              <span class="novus-stage">Early Stage · 2025–Present</span>
+              <span class="novus-stage">Beta · Apr. 2026–Present</span>
             </div>
             <p class="novus-tagline">Institutional financial prep for students who weren't handed the roadmap.</p>
             <div class="novus-mission">
-              <p class="novus-mission-label">What we're building</p>
+              <p class="novus-mission-label">What we've built</p>
               <ul class="novus-mission-list">
-                <li>Live financial modeling challenge; LeetCode-style, graded automatically</li>
-                <li>School-specific IB/PE recruiting roadmaps starting at Drexel LeBow</li>
-                <li>AI interview coach trained on real market conditions and deal flow</li>
-                <li>Alumni network with favorited connections and direct outreach tools</li>
+                <li>Multi-tenant Supabase backend with Row-Level Security isolating each university's data</li>
+                <li>Automated grading with Llama 3.3 70B on Supabase Edge Functions, 92.5% aligned with expert graders</li>
+                <li>80+ technical interview questions written with 8+ finance industry advisors</li>
+                <li>Real-time scoring endpoints for the beta rollout</li>
               </ul>
             </div>
-            <a href="https://www.linkedin.com/company/novusfinanceprep/" target="_blank" class="novus-cta">
+            <a href="https://www.linkedin.com/company/novusfinanceprep/" target="_blank" rel="noopener noreferrer" class="novus-cta">
               View on LinkedIn
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
@@ -292,7 +301,7 @@
           <p class="novus-form-cta-label">Want in?</p>
           <h3 class="novus-form-cta-title">Help shape <em>Novus.</em></h3>
           <p class="novus-form-cta-desc">
-            We are currently in the research and development phase of Novus, so your feedback would be incredibly valuable to us. Fill out the short form so that we can target the barriers that students phase in the current recruiting cycle.
+            Novus is in beta, so your feedback is incredibly valuable to us. Fill out the short form so we can target the barriers students face in the current recruiting cycle.
           </p>
         </div>
         <a href="https://forms.cloud.microsoft/r/g56rkn1s84" target="_blank" rel="noopener noreferrer" class="novus-form-cta-btn">
@@ -312,43 +321,57 @@
         <div class="resume-summary">
           <div class="resume-stat-row reveal reveal-delay-1">
             <div class="resume-stat">
-              <div class="resume-stat-value">3.90</div>
+              <div class="resume-stat-value">3.88</div>
               <div class="resume-stat-label">GPA · Drexel</div>
             </div>
             <div class="resume-stat">
-              <div class="resume-stat-value">30+</div>
-              <div class="resume-stat-label">PrepGo users</div>
+              <div class="resume-stat-value">9th / 52</div>
+              <div class="resume-stat-label">Philly Codefest 2026</div>
             </div>
             <div class="resume-stat">
-              <div class="resume-stat-value">300</div>
-              <div class="resume-stat-label">Tree RF model</div>
+              <div class="resume-stat-value">86%</div>
+              <div class="resume-stat-label">Stocks where MarketPulse beat EWMA</div>
             </div>
             <div class="resume-stat">
-              <div class="resume-stat-value">27</div>
-              <div class="resume-stat-label">Engineered features</div>
+              <div class="resume-stat-value">92.5%</div>
+              <div class="resume-stat-label">Novus AI grading alignment</div>
             </div>
           </div>
 
           <div class="resume-block reveal reveal-delay-2">
             <p class="resume-block-title">Summary</p>
-            <p>CS student at Drexel with <strong>hands-on experience</strong> building full-stack web apps and ML models in Python. Deployed real projects with real users, led volunteer teams, and focused on how <strong>data-driven software</strong> solves practical problems. I own projects from idea to deployment.</p>
+            <p>CS student at Drexel's Pennoni Honors College, minoring in <strong>AI &amp; Machine Learning</strong>. I build full-stack web apps and machine learning systems in Python and TypeScript, <strong>test them against real baselines</strong>, and ship them to real users. I own projects from idea to deployment.</p>
           </div>
 
           <div class="resume-block reveal reveal-delay-2">
             <p class="resume-block-title">Experience</p>
             <div class="resume-exp-item">
               <div>
-                <div class="resume-exp-role">Mentee</div>
-                <div class="resume-exp-place">CodeHS · Chicago, IL</div>
+                <div class="resume-exp-role">Undergraduate Researcher</div>
+                <div class="resume-exp-place">Drexel University · Advisor: Dr. Arvin Ebrahimkhanlou</div>
               </div>
-              <div class="resume-exp-date">Jun – Sep 2025</div>
+              <div class="resume-exp-date">Oct 2026 – Present</div>
             </div>
             <div class="resume-exp-item">
               <div>
-                <div class="resume-exp-role">Co-Coordinator, Youth Program</div>
-                <div class="resume-exp-place">BAPS</div>
+                <div class="resume-exp-role">Co-Founder</div>
+                <div class="resume-exp-place">Novus</div>
+              </div>
+              <div class="resume-exp-date">Apr 2026 – Present</div>
+            </div>
+            <div class="resume-exp-item">
+              <div>
+                <div class="resume-exp-role">Kishore Coordinator</div>
+                <div class="resume-exp-place">BAPS · Philadelphia, PA</div>
               </div>
               <div class="resume-exp-date">Sep 2025 – Present</div>
+            </div>
+            <div class="resume-exp-item">
+              <div>
+                <div class="resume-exp-role">Software Engineering Mentee</div>
+                <div class="resume-exp-place">CodeHS</div>
+              </div>
+              <div class="resume-exp-date">Jun – Sep 2025</div>
             </div>
           </div>
 
@@ -356,10 +379,11 @@
             <p class="resume-block-title">Education</p>
             <div class="resume-exp-item">
               <div>
-                <div class="resume-exp-role">B.S. Computer Science</div>
+                <div class="resume-exp-role">B.S. Computer Science · Minor in AI &amp; ML</div>
                 <div class="resume-exp-place">Drexel University · Pennoni Honors College</div>
+                <div class="resume-exp-place">Presidential Scholarship · Dean's List (Fall, Winter, Spring 2025–26)</div>
               </div>
-              <div class="resume-exp-date">2025 – 2030</div>
+              <div class="resume-exp-date">Expected Jun 2030</div>
             </div>
           </div>
 
@@ -382,7 +406,7 @@
             <button class="resume-topbar-expand" id="openResume2">Expand ↗</button>
           </div>
           <div class="resume-iframe-wrap">
-            <iframe class="resume-embed" src="hari_resume.pdf#toolbar=0&navpanes=0&scrollbar=0&zoom=page-width" title="Hari Patel Résumé preview"></iframe>
+            <iframe class="resume-embed" src="hari_resume.pdf#toolbar=0&navpanes=0&scrollbar=0&zoom=page-width" title="Hari Patel Résumé preview" loading="lazy"></iframe>
             <p class="resume-fallback">PDF not loading? <a href="hari_resume.pdf" download>Download it directly</a>.</p>
           </div>
         </div>
@@ -390,8 +414,30 @@
     </div>
   </section>
 
+  <section id="contact">
+    <div class="contact-inner">
+      <p class="section-label section-label--center reveal">Get in touch</p>
+      <h2 class="contact-big reveal reveal-delay-1">Let's build<br><em>something.</em></h2>
+      <p class="contact-sub reveal reveal-delay-2">I'm always open to hearing about new projects, opportunities, or just a good conversation about tech.</p>
+      <div class="contact-socials reveal reveal-delay-3">
+        <a href="https://www.linkedin.com/in/hari-patel-6712ba39a/" target="_blank" rel="noopener noreferrer" class="social-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/haripatel788" target="_blank" rel="noopener noreferrer" class="social-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          GitHub
+        </a>
+        <button class="email-copy-btn" id="emailBtn" aria-label="Copy email address haririteshpatel@gmail.com">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          <span id="emailBtnText">haririteshpatel@gmail.com</span>
+        </button>
+      </div>
+    </div>
+  </section>
+  </main>
 
-  <div class="resume-modal-overlay" id="resumeModal">
+  <div class="resume-modal-overlay" id="resumeModal" role="dialog" aria-modal="true" aria-label="Resume, full screen">
     <div class="resume-modal">
       <div class="resume-modal-header">
         <span class="resume-modal-title">Hari Patel — Resume</span>
@@ -400,41 +446,18 @@
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Download
           </a>
-          <button class="resume-modal-close" id="closeResume">✕</button>
+          <button class="resume-modal-close" id="closeResume" aria-label="Close resume">✕</button>
         </div>
       </div>
-      <iframe class="resume-modal-frame" src="hari_resume.pdf#toolbar=0" title="Hari Patel Resume full screen"></iframe>
+      <iframe class="resume-modal-frame" data-src="hari_resume.pdf#toolbar=0" title="Hari Patel Resume full screen"></iframe>
     </div>
   </div>
-
-
-  <section id="contact">
-    <div class="contact-inner">
-      <p class="section-label section-label--center reveal">Get in touch</p>
-      <h2 class="contact-big reveal reveal-delay-1">Let's build<br><em>something.</em></h2>
-      <p class="contact-sub reveal reveal-delay-2">I'm always open to hearing about new projects, opportunities, or just a good conversation about tech.</p>
-      <div class="contact-socials reveal reveal-delay-3">
-        <a href="https://www.linkedin.com/in/hari-patel-6712ba39a/" target="_blank" class="social-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://github.com/haripatel788" target="_blank" class="social-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-          GitHub
-        </a>
-        <button class="email-copy-btn" id="emailBtn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
-          <span id="emailBtnText">haririteshpatel@gmail.com</span>
-        </button>
-      </div>
-    </div>
-  </section>
 
   <footer>
     <span class="footer-name">Hari Patel</span>
     <span class="footer-copy">Built by Hari · 2026</span>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
