@@ -347,7 +347,7 @@ footer { padding: 2rem clamp(1.5rem,8vw,6rem); border-top: 1px solid var(--borde
 .stagger-parent.visible .stagger-child:nth-child(10) { opacity:1; transform:none; transition-delay:.5s;  }
 .stagger-parent.visible .stagger-child:nth-child(n+11){ opacity:1; transform:none; transition-delay:.55s; }
 
-/* ── Novus Section ── */
+/* novus */
 #novus { max-width: 1200px; margin: 0 auto; }
 .novus-inner { width: 100%; }
 
