@@ -1,106 +1,35 @@
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const menuButton=document.querySelector('.menu-button');const navLinks=document.querySelector('.nav-links');
+function setMenu(open){menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Close navigation':'Open navigation');navLinks.classList.toggle('open',open);document.body.classList.toggle('menu-open',open)}
+menuButton.addEventListener('click',()=>setMenu(menuButton.getAttribute('aria-expanded')!=='true'));navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setMenu(false)));document.addEventListener('keydown',event=>{if(event.key==='Escape')setMenu(false)});window.addEventListener('resize',()=>{if(window.innerWidth>820)setMenu(false)});
+const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;const reveals=document.querySelectorAll('.reveal');if(reduceMotion||!('IntersectionObserver'in window)){reveals.forEach(element=>element.classList.add('visible'))}else{const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(!entry.isIntersecting)return;entry.target.classList.add('visible');observer.unobserve(entry.target)})},{threshold:.12,rootMargin:'0px 0px -40px'});reveals.forEach(element=>observer.observe(element))}
 
-const hamBtn = document.getElementById('hamBtn');
-const mobileMenu = document.getElementById('mobileMenu');
-const setMenuOpen = (open) => {
-  hamBtn.classList.toggle('open', open);
-  mobileMenu.classList.toggle('open', open);
-  hamBtn.setAttribute('aria-expanded', String(open));
-  document.body.style.overflow = open ? 'hidden' : '';
-};
-hamBtn.addEventListener('click', () => setMenuOpen(!mobileMenu.classList.contains('open')));
-document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => setMenuOpen(false)));
+const finePointer=window.matchMedia('(hover: hover) and (pointer: fine)');
+const cursorDot=document.querySelector('.cursor-dot');
+const cursorRing=document.querySelector('.cursor-ring');
 
-const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.12 });
-document.querySelectorAll('.reveal, .stagger-parent').forEach(el => obs.observe(el));
-
-const EMAIL = 'haririteshpatel@gmail.com';
-const emailBtn = document.getElementById('emailBtn');
-const emailBtnText = document.getElementById('emailBtnText');
-const pageProgress = document.getElementById('pageProgress');
-emailBtn.addEventListener('click', () => {
-  if (!navigator.clipboard) { window.location.href = `mailto:${EMAIL}`; return; }
-  navigator.clipboard.writeText(EMAIL).then(() => {
-    emailBtnText.textContent = 'Copied!'; emailBtn.classList.add('copied');
-    setTimeout(() => { emailBtnText.textContent = EMAIL; emailBtn.classList.remove('copied'); }, 2000);
-  }).catch(() => { window.location.href = `mailto:${EMAIL}`; });
-});
-
-if (pageProgress) {
-  let rafId = null;
-  let current = 0;
-  let target = 0;
-
-  const getTargetProgress = () => {
-    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-    if (maxScroll <= 0) return 0;
-    return Math.min(1, Math.max(0, window.scrollY / maxScroll));
+if(finePointer.matches&&!reduceMotion&&cursorDot&&cursorRing){
+  document.body.classList.add('cursor-ready');
+  let mouseX=-100,mouseY=-100,ringX=-100,ringY=-100,frameId;
+  const renderCursor=()=>{
+    ringX+=(mouseX-ringX)*.18;
+    ringY+=(mouseY-ringY)*.18;
+    cursorRing.style.transform=`translate3d(${ringX}px,${ringY}px,0)`;
+    frameId=requestAnimationFrame(renderCursor);
   };
-
-  const render = () => {
-    current += (target - current) * 0.14;
-    if (Math.abs(target - current) < 0.0005) current = target;
-    pageProgress.style.transform = `scaleX(${current})`;
-
-    if (Math.abs(target - current) < 0.0005) {
-      rafId = null;
-      return;
-    }
-    rafId = requestAnimationFrame(render);
+  const showCursor=(event)=>{
+    mouseX=event.clientX;mouseY=event.clientY;
+    cursorDot.style.transform=`translate3d(${mouseX}px,${mouseY}px,0)`;
+    cursorDot.classList.add('is-visible');cursorRing.classList.add('is-visible');
   };
-
-  const queueProgressUpdate = () => {
-    target = getTargetProgress();
-    if (!rafId) rafId = requestAnimationFrame(render);
-  };
-
-  queueProgressUpdate();
-  window.addEventListener('scroll', queueProgressUpdate, { passive: true });
-  window.addEventListener('resize', queueProgressUpdate);
+  window.addEventListener('pointermove',showCursor,{passive:true});
+  document.addEventListener('pointerover',(event)=>{
+    const interactive=event.target.closest('a,button,[role="button"],.project-card,.capability-grid article');
+    cursorDot.classList.toggle('is-hovering',Boolean(interactive));
+    cursorRing.classList.toggle('is-hovering',Boolean(interactive));
+  });
+  document.addEventListener('pointerdown',()=>cursorRing.classList.add('is-pressed'));
+  document.addEventListener('pointerup',()=>cursorRing.classList.remove('is-pressed'));
+  document.documentElement.addEventListener('mouseleave',()=>{cursorDot.classList.remove('is-visible');cursorRing.classList.remove('is-visible')});
+  frameId=requestAnimationFrame(renderCursor);
+  window.addEventListener('pagehide',()=>cancelAnimationFrame(frameId),{once:true});
 }
-
-document.querySelectorAll('a[href^="#"]').forEach((a) => a.addEventListener('click', (e) => {
-  const t = document.querySelector(a.getAttribute('href'));
-  if (t) {
-    e.preventDefault();
-    t.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
-  }
-}));
-
-const modal = document.getElementById('resumeModal');
-const modalFrame = modal.querySelector('.resume-modal-frame');
-const closeResume = document.getElementById('closeResume');
-let lastFocused = null;
-
-const openModal = () => {
-  if (!modalFrame.src) modalFrame.src = modalFrame.dataset.src;
-  lastFocused = document.activeElement;
-  modal.classList.add('open');
-  document.body.style.overflow = 'hidden';
-  closeResume.focus();
-};
-const closeModal = () => {
-  if (!modal.classList.contains('open')) return;
-  modal.classList.remove('open');
-  document.body.style.overflow = '';
-  if (lastFocused) lastFocused.focus();
-};
-
-[document.getElementById('openResume'), document.getElementById('openResume2')].forEach(btn => btn && btn.addEventListener('click', openModal));
-closeResume.addEventListener('click', closeModal);
-modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-
-modal.addEventListener('keydown', e => {
-  if (e.key !== 'Tab') return;
-  const focusable = [...modal.querySelectorAll('a[href], button, iframe')];
-  const first = focusable[0];
-  const last = focusable[focusable.length - 1];
-  if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-  else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-});
-
-document.addEventListener('keydown', e => {
-  if (e.key !== 'Escape') return;
-  closeModal();
-  if (mobileMenu.classList.contains('open')) setMenuOpen(false);
-});

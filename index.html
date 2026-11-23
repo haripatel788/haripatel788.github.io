@@ -1,463 +1,188 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hari Patel</title>
-  <meta name="description" content="Hari Patel, CS student at Drexel. Projects, resume, and contact info.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hari Patel is a computer science student at Drexel building full-stack software and applied AI projects.">
+  <meta name="theme-color" content="#f5f5f7">
   <link rel="canonical" href="https://haripatel788.github.io/">
   <link rel="icon" type="image/png" href="2.png">
-  <meta property="og:title" content="Hari Patel">
-  <meta property="og:description" content="CS student at Drexel. Projects, resume, and contact info.">
+  <meta property="og:title" content="Hari Patel — Software & Applied AI">
+  <meta property="og:description" content="Full-stack software and applied AI projects by Hari Patel.">
   <meta property="og:image" content="https://haripatel788.github.io/2.png">
-  <meta property="og:url" content="https://haripatel788.github.io">
-  <meta name="twitter:card" content="summary">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=2">
+  <meta property="og:url" content="https://haripatel788.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Hari Patel — Software & Applied AI</title>
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <header class="site-header" id="top">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="wordmark" href="#top" aria-label="Hari Patel, home">Hari Patel</a>
+      <div class="nav-links" id="navLinks">
+        <a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+        <a class="nav-resume" href="hari_resume.pdf?v=3">Résumé</a>
+      </div>
+      <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+    </nav>
+  </header>
 
-  <div class="page-progress" id="pageProgress" aria-hidden="true"></div>
-  <div class="glow-blob glow-blob-1"></div>
-  <div class="glow-blob glow-blob-2"></div>
+  <main id="main">
+    <section class="hero shell">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Computer science · Drexel University</p>
+        <h1>Hari<br>Patel.</h1>
+        <p class="hero-intro">I study computer science at Drexel and build full-stack software and applied AI projects—products people can use, backed by systems I can measure.</p>
+        <div class="text-links"><a href="#work">View work</a><a href="hari_resume.pdf?v=3">Résumé</a></div>
+      </div>
+      <figure class="portrait portrait-logo reveal"><img src="2.png" alt="Hari Patel HP monogram" width="960" height="954"></figure>
+    </section>
 
-  <nav>
-    <a href="#hero" class="nav-logo">hari patel<span>.</span></a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Stack</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#novus">Novus</a></li>
-      <li><a href="#resume">Resume</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav-actions">
-      <a href="#contact" class="nav-cta">Get in touch</a>
-    </div>
-    <button class="ham-btn" id="hamBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
-  </nav>
+    <section class="recruiter-strip shell reveal" aria-label="Professional focus">
+      <p><span>01</span><strong>Full-stack engineering</strong><em>From database design and APIs to the interface people use.</em></p>
+      <p><span>02</span><strong>Applied AI</strong><em>Models evaluated against baselines, not presented as magic.</em></p>
+      <p><span>03</span><strong>Real-world ownership</strong><em>Deployed products, production constraints, and measurable outcomes.</em></p>
+    </section>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#about">About</a>
-    <a href="#experience">Stack</a>
-    <a href="#projects">Projects</a>
-    <a href="#novus">Novus</a>
-    <a href="#resume">Resume</a>
-    <a href="#contact">Contact</a>
-  </div>
-
-  <main>
-  <section id="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="hero-eyebrow">CS @ Drexel · Class of 2030</p>
-        <h1 class="hero-name">Hari<br><em>Patel.</em></h1>
-        <p class="hero-title">
-          I study <strong>Computer Science</strong> at Drexel (Pennoni Honors) and minor in <strong>AI &amp; Machine Learning</strong>.<br>
-          Mostly I build web apps and the backends behind them.
-        </p>
-        <div class="hero-ctas">
-          <a href="#projects" class="btn-primary">See my projects</a>
-          <a href="#contact" class="btn-ghost">Contact me</a>
+    <section class="market" id="work">
+      <div class="shell">
+        <div class="project-heading reveal">
+          <div><p class="eyebrow eyebrow-light">Featured project</p><h2>MarketPulse</h2></div>
+          <p class="project-lede">A forecast that answers a practical question: <strong>how much might this stock move?</strong></p>
         </div>
-      </div>
-      <div class="hero-photo-wrap">
-        <div class="hero-photo">
-          <img src="headshot.jpg" alt="Hari Patel headshot" />
+        <div class="market-metrics reveal" aria-label="MarketPulse benchmark results">
+          <p><span>474</span> held-out stocks scored</p>
+          <p><span>86–87%</span> beat the baseline, depending on horizon</p>
+          <p><span>1–30 days</span> forecast horizons</p>
         </div>
-      </div>
-    </div>
-    <div class="hero-scroll-indicator"><div class="scroll-line"></div></div>
-  </section>
-
-  <div class="divider"></div>
-
-  <section id="about">
-    <div class="about-grid">
-      <div class="about-photo-wrap reveal">
-        <img src="2.png" alt="Hari Patel illustration" loading="lazy" />
-      </div>
-      <div class="about-text">
-        <p class="section-label reveal">About me</p>
-        <h2 class="section-title reveal reveal-delay-1">A bit about <em>me.</em></h2>
-        <p class="reveal reveal-delay-2">Hey, I'm Hari. I'm a CS student at Drexel in the Pennoni Honors College, minoring in AI &amp; Machine Learning. I'm also doing undergrad research with Dr. Arvin Ebrahimkhanlou.</p>
-        <p class="reveal reveal-delay-3">I like working on every part of an app: the database, the API, auth, and the frontend people end up using. Most of my projects are deployed and have real users. When I build a model, I check it against a simple baseline before I trust it.</p>
-        <div class="about-chips stagger-parent reveal reveal-delay-4">
-          <span class="chip stagger-child">Drexel University</span>
-          <span class="chip stagger-child">Pennoni Honors College</span>
-          <span class="chip stagger-child">Computer Science</span>
-          <span class="chip stagger-child">AI &amp; ML Minor</span>
-          <span class="chip stagger-child">Dean's List</span>
-          <span class="chip stagger-child">Presidential Scholar</span>
-          <span class="chip stagger-child">Open to opportunities</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience">
-    <div class="tech-section-inner">
-      <p class="section-label reveal">Technologies</p>
-      <h2 class="section-title reveal reveal-delay-1">My <em>stack.</em></h2>
-      <div class="tech-category reveal reveal-delay-2">
-        <p class="tech-category-label">Core languages</p>
-        <div class="tech-pills stagger-parent visible">
-          <span class="tech-pill featured stagger-child">Python</span>
-          <span class="tech-pill featured stagger-child">TypeScript</span>
-          <span class="tech-pill featured stagger-child">JavaScript</span>
-          <span class="tech-pill stagger-child">Java</span>
-          <span class="tech-pill stagger-child">SQL</span>
-          <span class="tech-pill stagger-child">HTML</span>
-          <span class="tech-pill stagger-child">CSS</span>
-        </div>
-      </div>
-      <div class="tech-category reveal reveal-delay-2">
-        <p class="tech-category-label">Frameworks & libraries</p>
-        <div class="tech-pills stagger-parent visible">
-          <span class="tech-pill featured stagger-child">Next.js</span>
-          <span class="tech-pill featured stagger-child">React</span>
-          <span class="tech-pill featured stagger-child">FastAPI</span>
-          <span class="tech-pill stagger-child">Express.js</span>
-          <span class="tech-pill stagger-child">Tailwind CSS</span>
-          <span class="tech-pill stagger-child">Pandas</span>
-          <span class="tech-pill stagger-child">NumPy</span>
-          <span class="tech-pill stagger-child">Scikit-learn</span>
-          <span class="tech-pill stagger-child">Prisma</span>
-          <span class="tech-pill stagger-child">Bootstrap</span>
-        </div>
-      </div>
-      <div class="tech-category reveal reveal-delay-3">
-        <p class="tech-category-label">Databases & infra</p>
-        <div class="tech-pills stagger-parent visible">
-          <span class="tech-pill featured stagger-child">PostgreSQL</span>
-          <span class="tech-pill featured stagger-child">Supabase</span>
-          <span class="tech-pill featured stagger-child">Firebase</span>
-          <span class="tech-pill stagger-child">Neon</span>
-          <span class="tech-pill stagger-child">AWS (EC2, RDS)</span>
-          <span class="tech-pill stagger-child">Vercel</span>
-          <span class="tech-pill stagger-child">Clerk</span>
-          <span class="tech-pill stagger-child">Git</span>
-          <span class="tech-pill stagger-child">GitHub</span>
-          <span class="tech-pill stagger-child">pytest</span>
-        </div>
-      </div>
-      <div class="tech-category reveal reveal-delay-3">
-        <p class="tech-category-label">Creative</p>
-        <div class="tech-pills stagger-parent visible">
-          <span class="tech-pill stagger-child">Photoshop</span>
-          <span class="tech-pill stagger-child">Premiere Pro</span>
-          <span class="tech-pill stagger-child">After Effects</span>
-          <span class="tech-pill stagger-child">Adobe Audition</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="projects-header">
-      <div>
-        <p class="section-label reveal">Projects</p>
-        <h2 class="section-title reveal reveal-delay-1">What I've been <em>working on.</em></h2>
-      </div>
-    </div>
-
-    <div class="projects-bento">
-
-      <div class="project-card has-preview bento-r1c1 reveal">
-        <p class="project-number">01 · Featured</p>
-        <img class="project-preview" src="marketpulse-screenshot.jpg" alt="MarketPulse forecast for AAPL showing 80% and 95% price ranges" loading="lazy">
-        <h3 class="project-name">MarketPulse</h3>
-        <p class="project-desc">Forecasts how much a stock is likely to move over the next 1 to 30 trading days, with 80% and 95% price ranges. Each stock gets its own HAR volatility model fit on 10 years of prices. I backtested it on 112,700 predictions across 490 S&amp;P 500 stocks. It beat an EWMA baseline on 86% of the 474 stocks I held out, and the actual close landed inside the 80% range 81% of the time. The backend is FastAPI with Supabase auth, rate limiting, and 27 integration tests.</p>
-        <div class="project-footer">
-          <span class="project-tag">Python · FastAPI · Pandas · Supabase</span>
-          <div class="project-links">
-            <a href="https://github.com/haripatel788/MarketPulse" target="_blank" rel="noopener noreferrer" class="project-link">Repo <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            <a href="https://marketpulse-ba4x.onrender.com" target="_blank" rel="noopener noreferrer" class="project-link">Live Site <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="market-showcase">
+          <div class="market-story" aria-label="How MarketPulse works">
+            <div class="scroll-copy reveal">
+              <span>01</span>
+              <h3>Start with uncertainty.</h3>
+              <p>Instead of guessing whether a stock goes up or down, MarketPulse estimates the size of its likely move.</p>
+            </div>
+            <div class="scroll-copy reveal">
+              <span>02</span>
+              <h3>Make the range useful.</h3>
+              <p>It translates volatility into clear 80% and 95% price ranges across the selected forecast horizon.</p>
+            </div>
+            <div class="scroll-copy reveal">
+              <span>03</span>
+              <h3>Test it honestly.</h3>
+              <p>The model is scored on held-out stocks and compared with a simple baseline before its results are trusted.</p>
+            </div>
           </div>
+          <figure class="screen screen-market reveal"><img src="marketpulse-screenshot.jpg" alt="MarketPulse showing an AAPL volatility forecast and 80 and 95 percent price ranges" width="1600" height="900" loading="lazy"></figure>
+        </div>
+        <div class="project-notes reveal">
+          <p>MarketPulse fits a per-stock HAR volatility model using historical prices, then turns expected movement into calibrated 80% and 95% ranges. The held-out benchmark scored 474 stocks; the model beat its EWMA baseline on 86–87% of them depending on the forecast horizon.</p>
+          <p class="meta">Python · FastAPI · Pandas · Supabase</p>
+          <div class="proof-row" aria-label="MarketPulse engineering evidence"><span><strong>112.7K</strong> backtested forecasts</span><span><strong>81%</strong> observed 80% interval coverage</span><span><strong>27</strong> integration tests</span><span><strong>JWT + RBAC</strong> production access controls</span></div>
+          <div class="text-links text-links-light"><a href="https://marketpulse-ba4x.onrender.com" target="_blank" rel="noopener noreferrer">Live site</a><a href="https://github.com/haripatel788/MarketPulse" target="_blank" rel="noopener noreferrer">Repository</a></div>
         </div>
       </div>
+    </section>
 
-      <div class="project-card bento-r1c2 reveal reveal-delay-1">
-        <p class="project-number">02</p>
-        <h3 class="project-name">PrepGo</h3>
-        <p class="project-desc">An SAT prep site I built with two teammates. 30 students have used it to answer 300+ practice questions. It uses Clerk for login and Postgres on Neon. I added a per-session rate limiter after the database kept running out of connections and crashing the server.</p>
-        <div class="project-footer">
-          <span class="project-tag">Next.js · TypeScript · Neon · Clerk</span>
-          <a href="https://prep-go.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link">Live Site <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-
-
-      <div class="project-card bento-r2c1 reveal reveal-delay-1">
-        <p class="project-number">03</p>
-        <h3 class="project-name">Session</h3>
-        <p class="project-desc">A productivity web app built with Next.js. It uses Clerk for login and protected pages, Prisma for the database, and server-side rendering so pages load quickly.</p>
-        <div class="project-footer">
-          <span class="project-tag">Next.js · Prisma</span>
-          <a href="https://sessionapp.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">Live Site <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-
-      <div class="project-card has-preview bento-r2c2 reveal reveal-delay-2">
-        <p class="project-number">04 · Featured</p>
-        <img class="project-preview" src="sixthandmarket-screenshot.jpg" alt="Sixth and Market project preview" loading="lazy">
-        <h3 class="project-name">Sixth & Market</h3>
-        <p class="project-desc">Built in 11 hours at Philly Codefest 2026, where we placed 9th out of 52 teams. An LLM sorts Philadelphia 311 complaints, running through an Express proxy so the API key stays on the server. A Leaflet map layers FCC broadband coverage, Census tracts, and complaint data to show where internet access is worst.</p>
-        <div class="project-footer">
-          <span class="project-tag">React · TypeScript · Express.js · Groq · Leaflet</span>
-          <a href="https://github.com/haripatel788/codefest2026" target="_blank" rel="noopener noreferrer" class="project-link">Repo <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-
-
-      <div class="project-card bento-r3c1 reveal reveal-delay-2">
-        <p class="project-number">05</p>
-        <h3 class="project-name">CallReminderBot</h3>
-        <p class="project-desc">A Telegram bot that hands out roles for our weekly call. It picks whoever has gone the fewest times, skipping last week's people and anyone on vacation, and keeps its history in a Google Sheet. It runs on a GitHub Actions schedule, so there's no server to keep up.</p>
-        <div class="project-footer">
-          <span class="project-tag">Python · GitHub Actions</span>
-          <a href="https://github.com/haripatel788/weekly-call-reminder" target="_blank" rel="noopener noreferrer" class="project-link">Repo <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-
-      <div class="project-card bento-r3c2 reveal reveal-delay-3">
-        <p class="project-number">06</p>
-        <h3 class="project-name">Smaranam</h3>
-        <p class="project-desc">A community site for religious education. It uses Firebase Realtime Database, so changes show up for everyone right away.</p>
-        <div class="project-footer">
-          <span class="project-tag">Firebase · JavaScript</span>
-          <a href="https://smaranam.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">Live Site <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-
-      <div class="project-card bento-r3c3 reveal reveal-delay-4">
-        <p class="project-number">07</p>
-        <h3 class="project-name">Java RPG</h3>
-        <p class="project-desc">A text-based RPG I wrote in Java to practice OOP. It uses inheritance and polymorphism, and the story branches based on what you type.</p>
-        <div class="project-footer">
-          <span class="project-tag">Java · OOP</span>
-          <a href="https://codehs.com/sandbox/id/rpg-Cq6Ldt/run" target="_blank" rel="noopener noreferrer" class="project-link">Play <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <section id="novus">
-    <div class="novus-inner">
-      <p class="section-label reveal">Co-founder · Since Apr 2026</p>
-      <h2 class="section-title reveal reveal-delay-1">Co-founding <em>Novus.</em></h2>
-
+    <section class="novus shell" id="novus">
+      <div class="novus-title reveal"><p class="eyebrow">Co-founder case study</p><h2>Opening the door to finance careers.</h2></div>
       <div class="novus-grid">
-
-        <div class="novus-text reveal reveal-delay-2">
-          <p>
-            I'm building <strong>Novus</strong> with <a href="https://www.linkedin.com/in/rishabh-teegavarapu/" target="_blank" rel="noopener noreferrer" class="novus-partner-link">Rishabh Teegavarapu</a> and <a href="https://www.linkedin.com/in/anantheshwar-elumalai/" target="_blank" rel="noopener noreferrer" class="novus-partner-link">Anantheshwar Elumalai</a>. We kept seeing the same problem: students at non-target schools don't have a clear path into investment banking or private equity. Wall Street Prep, WSO, and BIWS help, but they mostly assume you already have the connections. We want to help the students who don't.
-          </p>
-          <p>
-            Novus is an interview prep platform that universities set up for their students. I built the backend on Supabase, with a 40-table Postgres schema and row-level security so each school only sees its own data. I also built the grading. Llama 3.3 70B scores answers on technical accuracy, risk awareness, and communication, and on 37 of 40 test answers it came within 2 points of my own grades. I've written 80+ interview questions and gone over them with 8+ finance advisors, and we've talked with people at Deutsche Bank, JPMorgan, BlackRock, and Vanguard. The beta starts at Drexel's LeBow College of Business.
-          </p>
-          <div class="novus-chips stagger-parent reveal reveal-delay-3">
-            <span class="chip stagger-child">Fintech</span>
-            <span class="chip stagger-child">EdTech</span>
-            <span class="chip stagger-child">B2B SaaS</span>
-            <span class="chip stagger-child">Multi-tenant</span>
-            <span class="chip stagger-child">LLM Grading</span>
-            <span class="chip stagger-child">Non-Target Recruiting</span>
-          </div>
+        <div class="novus-summary reveal">
+          <h3>Novus</h3>
+          <p>Novus is an interview-prep platform for universities serving students without the traditional recruiting network for investment banking and private equity.</p>
+          <a class="inline-link" href="https://www.linkedin.com/company/novusfinanceprep/" target="_blank" rel="noopener noreferrer">Visit the company page</a>
         </div>
-
-        <div class="novus-card-wrap reveal reveal-delay-2">
-          <div class="novus-card">
-            <div class="novus-card-header">
-              <span class="novus-label">Novus</span>
-              <span class="novus-stage">In beta</span>
-            </div>
-            <p class="novus-tagline">Finance interview prep for students without the connections.</p>
-            <div class="novus-mission">
-              <p class="novus-mission-label">So far</p>
-              <ul class="novus-mission-list">
-                <li>Supabase backend that keeps each university's data separate</li>
-                <li>AI grading with Llama 3.3 70B, within 2 points of my grades on 37 of 40 test answers</li>
-                <li>80+ interview questions, reviewed with 8+ finance advisors</li>
-                <li>Live scoring for the beta</li>
-              </ul>
-            </div>
-            <a href="https://www.linkedin.com/company/novusfinanceprep/" target="_blank" rel="noopener noreferrer" class="novus-cta">
-              View on LinkedIn
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
-
+        <article class="grader reveal">
+          <p class="grader-label">What I built</p>
+          <h3>An interview grader that gives students a useful next step.</h3>
+          <p>I built the Supabase backend, including a 40-table Postgres schema with row-level security, and the LLM grading system. It scores answers for technical accuracy, risk awareness, and communication.</p>
+          <div class="system-flow" aria-label="Novus system architecture"><span>React</span><i></i><span>Edge Functions</span><i></i><span>Llama grading</span><i></i><span>PostgreSQL + RLS</span></div>
+          <div class="grader-result"><strong>92.5%</strong><span>of test answers scored within two points of my own grades</span></div>
+          <p class="meta">80+ advisor-reviewed questions · 10 onboarded industry advisors · Beta beginning at Drexel LeBow</p>
+        </article>
       </div>
+    </section>
 
-      <div class="novus-form-cta reveal reveal-delay-3">
-        <div class="novus-form-cta-text">
-          <p class="novus-form-cta-label">Recruiting for finance?</p>
-          <h3 class="novus-form-cta-title">Help us build <em>Novus.</em></h3>
-          <p class="novus-form-cta-desc">
-            If you're going through finance recruiting, we'd like to hear what's been hardest for you. The form only takes a few minutes.
-          </p>
-        </div>
-        <a href="https://forms.cloud.microsoft/r/g56rkn1s84" target="_blank" rel="noopener noreferrer" class="novus-form-cta-btn">
-          Fill out the form
-          <svg width="14" height="14" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+    <section class="paired shell" aria-labelledby="paired-title">
+      <div class="section-heading reveal"><h2 id="paired-title">Selected projects</h2></div>
+      <div class="card-grid">
+        <article class="project-card prepgo reveal">
+          <div class="card-top"><p class="eyebrow">SAT preparation</p><h3>PrepGo</h3><p>When database connections were being exhausted and crashing the server, I traced the issue and added per-session rate limiting. The product has a reported 30 active users and 300+ completed questions.</p></div>
+          <figure class="screen screen-card"><img src="prepgo-screenshot.webp" alt="PrepGo homepage showing its SAT practice experience and projected score dashboard" width="3594" height="1448" loading="lazy"></figure>
+          <div><p class="card-stat"><strong>30</strong> active users <span>·</span> <strong>300+</strong> questions completed</p><p class="meta">Next.js · TypeScript · Neon · Clerk</p><a class="inline-link" href="https://prep-go.vercel.app" target="_blank" rel="noopener noreferrer">Visit PrepGo</a></div>
+        </article>
+        <article class="project-card codefest reveal">
+          <div class="card-top"><p class="eyebrow eyebrow-light">Civic technology</p><h3>Sixth &amp; Market</h3><p>Built in 11 hours at Philly Codefest. I built the interactive Leaflet map combining FCC, Census, and complaint data, and routed Groq through an Express proxy to keep API keys server-side.</p></div>
+          <figure class="screen screen-card"><img src="sixthandmarket-screenshot.jpg" alt="Sixth and Market interface for reporting a Philadelphia city issue" width="1600" height="905" loading="lazy"></figure>
+          <div><p class="card-stat"><strong>9th place</strong> out of 52 teams</p><p class="meta meta-light">React · TypeScript · Express · Groq · Leaflet</p><a class="inline-link inline-link-light" href="https://github.com/haripatel788/codefest2026" target="_blank" rel="noopener noreferrer">View repository</a></div>
+        </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="resume">
-    <div class="resume-inner">
-      <p class="section-label reveal">Resume</p>
-      <h2 class="section-title reveal reveal-delay-1">The short <em>version.</em></h2>
-
-      <div class="resume-layout">
-        <div class="resume-summary">
-          <div class="resume-stat-row reveal reveal-delay-1">
-            <div class="resume-stat">
-              <div class="resume-stat-value">3.88</div>
-              <div class="resume-stat-label">GPA · Drexel</div>
+    <section class="capabilities" aria-labelledby="capabilities-title">
+      <div class="shell tech-heading reveal">
+        <p class="eyebrow">Technical toolkit</p>
+        <h2 id="capabilities-title">Languages &amp; frameworks</h2>
+        <p>Technologies I have used to ship the projects above.</p>
+      </div>
+      <div class="tech-marquee reveal" aria-label="Languages and frameworks I have worked with">
+        <div class="tech-row">
+          <div class="tech-track">
+            <div class="tech-set">
+              <span class="tech-item"><b>PY</b><strong>Python</strong></span><span class="tech-item"><b>TS</b><strong>TypeScript</strong></span><span class="tech-item"><b>JS</b><strong>JavaScript</strong></span><span class="tech-item"><b>JV</b><strong>Java</strong></span><span class="tech-item"><b>SQL</b><strong>SQL</strong></span><span class="tech-item"><b>WEB</b><strong>HTML &amp; CSS</strong></span>
             </div>
-            <div class="resume-stat">
-              <div class="resume-stat-value">9th / 52</div>
-              <div class="resume-stat-label">Philly Codefest 2026</div>
+            <div class="tech-set" aria-hidden="true">
+              <span class="tech-item"><b>PY</b><strong>Python</strong></span><span class="tech-item"><b>TS</b><strong>TypeScript</strong></span><span class="tech-item"><b>JS</b><strong>JavaScript</strong></span><span class="tech-item"><b>JV</b><strong>Java</strong></span><span class="tech-item"><b>SQL</b><strong>SQL</strong></span><span class="tech-item"><b>WEB</b><strong>HTML &amp; CSS</strong></span>
             </div>
-            <div class="resume-stat">
-              <div class="resume-stat-value">86%</div>
-              <div class="resume-stat-label">Stocks where MarketPulse beat EWMA</div>
-            </div>
-            <div class="resume-stat">
-              <div class="resume-stat-value">112.7K</div>
-              <div class="resume-stat-label">Backtested MarketPulse forecasts</div>
-            </div>
-          </div>
-
-          <div class="resume-block reveal reveal-delay-2">
-            <p class="resume-block-title">Summary</p>
-            <p>CS student at Drexel, minoring in AI &amp; ML. I build full-stack web apps and machine learning projects, mostly in Python and TypeScript, and I like seeing a project through from the first idea to something people actually use.</p>
-          </div>
-
-          <div class="resume-block reveal reveal-delay-2">
-            <p class="resume-block-title">Experience</p>
-            <div class="resume-exp-item">
-              <div>
-                <div class="resume-exp-role">Undergraduate Researcher</div>
-                <div class="resume-exp-place">Drexel University · Advisor: Dr. Arvin Ebrahimkhanlou</div>
-              </div>
-              <div class="resume-exp-date">Oct 2026 – Present</div>
-            </div>
-            <div class="resume-exp-item">
-              <div>
-                <div class="resume-exp-role">Co-Founder</div>
-                <div class="resume-exp-place">Novus</div>
-              </div>
-              <div class="resume-exp-date">Apr 2026 – Present</div>
-            </div>
-            <div class="resume-exp-item">
-              <div>
-                <div class="resume-exp-role">Youth Coordinator</div>
-                <div class="resume-exp-place">BAPS · Philadelphia, PA</div>
-              </div>
-              <div class="resume-exp-date">Sep 2025 – Present</div>
-            </div>
-            <div class="resume-exp-item">
-              <div>
-                <div class="resume-exp-role">Software Engineering Mentee</div>
-                <div class="resume-exp-place">CodeHS</div>
-              </div>
-              <div class="resume-exp-date">Jun – Sep 2025</div>
-            </div>
-          </div>
-
-          <div class="resume-block reveal reveal-delay-3">
-            <p class="resume-block-title">Education</p>
-            <div class="resume-exp-item">
-              <div>
-                <div class="resume-exp-role">B.S. Computer Science · Minor in AI &amp; ML</div>
-                <div class="resume-exp-place">Drexel University · Pennoni Honors College</div>
-                <div class="resume-exp-place">Presidential Scholarship · Dean's List (Fall, Winter, Spring 2025–26)</div>
-              </div>
-              <div class="resume-exp-date">Expected Jun 2030</div>
-            </div>
-          </div>
-
-          <div class="resume-ctas reveal reveal-delay-3">
-            <a href="hari_resume.pdf?v=2" download="Hari_Patel_Resume.pdf" class="resume-btn-dl">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download PDF
-            </a>
-            <button class="resume-btn-expand" id="openResume">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-              Full screen
-            </button>
           </div>
         </div>
-
-        <div class="resume-preview-panel reveal reveal-delay-2">
-          <div class="resume-topbar">
-            <div class="resume-dots"><span></span><span></span><span></span></div>
-            <span class="resume-topbar-label">Hari_Patel_Resume.pdf</span>
-            <button class="resume-topbar-expand" id="openResume2">Expand ↗</button>
-          </div>
-          <div class="resume-iframe-wrap">
-            <iframe class="resume-embed" src="hari_resume.pdf?v=2#toolbar=0&navpanes=0&scrollbar=0&zoom=page-width" title="Resume preview" loading="lazy"></iframe>
-            <p class="resume-fallback">PDF not loading? <a href="hari_resume.pdf?v=2" download>Download it directly</a>.</p>
+        <div class="tech-row tech-row-reverse">
+          <div class="tech-track">
+            <div class="tech-set">
+              <span class="tech-item"><b>RE</b><strong>React</strong></span><span class="tech-item"><b>NX</b><strong>Next.js</strong></span><span class="tech-item"><b>FA</b><strong>FastAPI</strong></span><span class="tech-item"><b>EX</b><strong>Express</strong></span><span class="tech-item"><b>PG</b><strong>PostgreSQL</strong></span><span class="tech-item"><b>SB</b><strong>Supabase</strong></span><span class="tech-item"><b>PD</b><strong>Pandas</strong></span><span class="tech-item"><b>FB</b><strong>Firebase</strong></span>
+            </div>
+            <div class="tech-set" aria-hidden="true">
+              <span class="tech-item"><b>RE</b><strong>React</strong></span><span class="tech-item"><b>NX</b><strong>Next.js</strong></span><span class="tech-item"><b>FA</b><strong>FastAPI</strong></span><span class="tech-item"><b>EX</b><strong>Express</strong></span><span class="tech-item"><b>PG</b><strong>PostgreSQL</strong></span><span class="tech-item"><b>SB</b><strong>Supabase</strong></span><span class="tech-item"><b>PD</b><strong>Pandas</strong></span><span class="tech-item"><b>FB</b><strong>Firebase</strong></span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact">
-    <div class="contact-inner">
-      <p class="section-label section-label--center reveal">Contact</p>
-      <h2 class="contact-big reveal reveal-delay-1">Get in<br><em>touch.</em></h2>
-      <p class="contact-sub reveal reveal-delay-2">Email or LinkedIn is the best way to reach me. Happy to talk about any of these projects or about opportunities.</p>
-      <div class="contact-socials reveal reveal-delay-3">
-        <a href="https://www.linkedin.com/in/hari-patel-6712ba39a/" target="_blank" rel="noopener noreferrer" class="social-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://github.com/haripatel788" target="_blank" rel="noopener noreferrer" class="social-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-          GitHub
-        </a>
-        <button class="email-copy-btn" id="emailBtn" aria-label="Copy email address haririteshpatel@gmail.com">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
-          <span id="emailBtnText">haririteshpatel@gmail.com</span>
-        </button>
+    <section class="experience" id="experience">
+      <div class="shell experience-grid">
+        <div class="section-heading reveal"><p class="eyebrow">Experience &amp; education</p><h2>Learning by building.</h2></div>
+        <ol class="timeline reveal">
+          <li><time>Oct 2026 — Present</time><div><h3>Undergraduate Researcher</h3><p>Drexel University · Advisor: Dr. Arvin Ebrahimkhanlou</p><p class="timeline-detail">Exploring generative AI that reasons about the causes of infrastructure damage to support diagnosis and prognosis, while reviewing CVPR computer-vision architectures for the research pipeline.</p></div></li>
+          <li><time>Jun — Sep 2025</time><div><h3>Software Engineering Mentee</h3><p>CodeHS</p><p class="timeline-detail">Participated in sprint ceremonies and reviewed pull requests and tickets with an eight-person production engineering team.</p></div></li>
+          <li><time>Sep 2025 — Present</time><div><h3>Youth Coordinator</h3><p>BAPS · Philadelphia</p><p class="timeline-detail">Grew average weekly attendance from 14 to 19 over 52 weeks and organized seven community events.</p></div></li>
+          <li><time>Expected Jun 2030</time><div><h3>B.S. Computer Science</h3><p>Drexel University · Pennoni Honors College · Minor in AI &amp; Machine Learning</p></div></li>
+        </ol>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="more shell" aria-labelledby="more-title">
+      <div class="section-heading reveal"><p class="eyebrow">More projects</p><h2 id="more-title">Smaller ideas, shipped.</h2></div>
+      <div class="project-list reveal">
+        <a href="https://sessionapp.vercel.app/" target="_blank" rel="noopener noreferrer"><span>Session</span><em>Productivity app · Next.js, Prisma</em></a>
+        <a href="https://github.com/haripatel788/weekly-call-reminder" target="_blank" rel="noopener noreferrer"><span>CallReminderBot</span><em>Fair weekly scheduling · Python, GitHub Actions</em></a>
+        <a href="https://smaranam.vercel.app/" target="_blank" rel="noopener noreferrer"><span>Smaranam</span><em>Community education · Firebase, JavaScript</em></a>
+        <a href="https://codehs.com/sandbox/id/rpg-Cq6Ldt/run" target="_blank" rel="noopener noreferrer"><span>Java RPG</span><em>Branching text adventure · Java, OOP</em></a>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="shell reveal">
+        <p class="eyebrow eyebrow-light">Let’s talk</p><h2>Have a thoughtful problem to solve?</h2>
+        <p>I’m seeking software engineering, full-stack, and applied AI co-ops—and I’m always glad to talk about a project worth building.</p>
+        <div class="contact-links"><a href="mailto:hrp43@drexel.edu">Email</a><a href="https://github.com/haripatel788" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/haripatel788/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="hari_resume.pdf?v=3">Résumé</a></div>
+      </div>
+    </section>
   </main>
-
-  <div class="resume-modal-overlay" id="resumeModal" role="dialog" aria-modal="true" aria-label="Resume, full screen">
-    <div class="resume-modal">
-      <div class="resume-modal-header">
-        <span class="resume-modal-title">Resume</span>
-        <div class="resume-modal-actions">
-          <a href="hari_resume.pdf?v=2" download="Hari_Patel_Resume.pdf" class="resume-modal-dl">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download
-          </a>
-          <button class="resume-modal-close" id="closeResume" aria-label="Close resume">✕</button>
-        </div>
-      </div>
-      <iframe class="resume-modal-frame" data-src="hari_resume.pdf?v=2#toolbar=0" title="Hari Patel Resume full screen"></iframe>
-    </div>
-  </div>
-
-  <footer>
-    <span class="footer-name">Hari Patel</span>
-    <span class="footer-copy">© 2026</span>
-  </footer>
-
-  <script src="script.js?v=2"></script>
+  <footer class="footer"><div class="shell"><span>Hari Patel</span><span>Philadelphia · 2026</span></div></footer>
+  <script src="script.js?v=4"></script>
 </body>
 </html>
